@@ -1,0 +1,1 @@
+chromium-browser --headless --disable-gpu --dump-dom https://www.chromestatus.com/
