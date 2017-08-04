@@ -33,4 +33,4 @@ RUN rm -rf /var/lib/apt/lists/* \
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 
-CMD google-chrome --headless --disable-gpu --no-sandbox --dump-dom https://www.chromestatus.com/
+CMD sh
