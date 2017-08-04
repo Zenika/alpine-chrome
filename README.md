@@ -1,3 +1,7 @@
+# Description
+
+Chrome running in headless mode in a tiny Alpine image.
+
 # How to
 
 Main command to launch a shell
