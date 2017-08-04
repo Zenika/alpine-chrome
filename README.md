@@ -35,3 +35,17 @@ Command: `chromium-browser --headless --disable-gpu --screenshot --window-size=1
 ### Nexus 5x
 
 Command: `chromium-browser --headless --disable-gpu --screenshot --window-size=412,732 https://www.chromestatus.com/`
+
+# Alpine version
+
+```
+docker run -it --rm zenika/alpine-chrome cat /etc/alpine-release
+3.6.2
+```
+
+# Chrome version
+
+```
+docker run -it --rm zenika/alpine-chrome chromium-browser --version
+Chromium 59.0.3071.115 
+```
