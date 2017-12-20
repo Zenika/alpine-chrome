@@ -1,36 +1,40 @@
-# Description
+# Supported tags and respective `Dockerfile` links
 
-Chrome running in headless mode in a tiny Alpine image.
+ * `latest` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 
-# How to
+# alpine-chrome
+Minimal Headless Chrome Docker Images built on Alpine Linux
+Based on `zenika/alpine-node`
 
-Main command to launch a shell
-`docker run -it --rm zenika/alpine-chrome`
+# Why this image
 
-# Headless usage 
+We often need a headless chrome.
+We created this image to get a fully headless chrome image.
+
+# How to use this image
 
 ## Print the DOM 
 
-Using `docker run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
+Using `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome` to open a shell
 
 Command: `chromium-browser --headless --disable-gpu --dump-dom https://www.chromestatus.com/`
 
-Or directly `docker run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --dump-dom https://www.chromestatus.com/`
+Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --dump-dom https://www.chromestatus.com/`
 
 ## Print a PDF
 
-Using `docker run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
+Using `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
 
 Command: `chromium-browser --headless --disable-gpu --print-to-pdf https://www.chromestatus.com/`
 
-Or directly `docker run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --print-to-pdf https://www.chromestatus.com/`
+Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --print-to-pdf https://www.chromestatus.com/`
 
 ## Take a screenshot 
 
-Using `docker run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
+Using `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
 Command: `chromium-browser --headless --disable-gpu --screenshot https://www.chromestatus.com/`
 
-Or directly `docker run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --screenshot https://www.chromestatus.com/`
+Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --screenshot https://www.chromestatus.com/`
 
 ### Size of a standard letterhead.
 
@@ -40,16 +44,26 @@ Command: `chromium-browser --headless --disable-gpu --screenshot --window-size=1
 
 Command: `chromium-browser --headless --disable-gpu --screenshot --window-size=412,732 https://www.chromestatus.com/`
 
-# Alpine version
+# Reference
+
+ * Headless Chrome website : https://developers.google.com/web/updates/2017/04/headless-chrome
+
+ * Where to file issues : https://github.com/Zenika/alpine-chrome/issues
+
+ * Maintained by : https://www.zenika.com
+
+# Versions (in latest)
+
+## Alpine version
 
 ```
 docker run -it --rm zenika/alpine-chrome cat /etc/alpine-release
 3.6.2
 ```
 
-# Chrome version
+## Chrome version
 
 ```
 docker run -it --rm zenika/alpine-chrome chromium-browser --version
-Chromium 59.0.3071.115 
+Chromium 61.0.3163.100
 ```
