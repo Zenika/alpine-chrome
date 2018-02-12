@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
- * `latest` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+ * `latest`, `63` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 
 # alpine-chrome
 Minimal Headless Chrome Docker Images built on Alpine Linux
