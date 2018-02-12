@@ -17,32 +17,32 @@ We created this image to get a fully headless chrome image.
 
 Using `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome` to open a shell
 
-Command: `chromium-browser --headless --disable-gpu --dump-dom https://www.chromestatus.com/`
+Command: `chromium-browser --headless --disable-gpu --no-sandbox --dump-dom https://www.chromestatus.com/`
 
-Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --dump-dom https://www.chromestatus.com/`
+Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --no-sandbox --dump-dom https://www.chromestatus.com/`
 
 ## Print a PDF
 
 Using `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
 
-Command: `chromium-browser --headless --disable-gpu --print-to-pdf https://www.chromestatus.com/`
+Command: `chromium-browser --headless --disable-gpu --no-sandbox --print-to-pdf https://www.chromestatus.com/`
 
-Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --print-to-pdf https://www.chromestatus.com/`
+Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --no-sandbox --print-to-pdf https://www.chromestatus.com/`
 
 ## Take a screenshot 
 
 Using `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
-Command: `chromium-browser --headless --disable-gpu --screenshot https://www.chromestatus.com/`
+Command: `chromium-browser --headless --disable-gpu --no-sandbox --screenshot https://www.chromestatus.com/`
 
-Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --screenshot https://www.chromestatus.com/`
+Or directly `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome chromium-browser --headless --disable-gpu --no-sandbox --screenshot https://www.chromestatus.com/`
 
 ### Size of a standard letterhead.
 
-Command: `chromium-browser --headless --disable-gpu --screenshot --window-size=1280,1696 https://www.chromestatus.com/`
+Command: `chromium-browser --headless --disable-gpu --screenshot --no-sandbox --window-size=1280,1696 https://www.chromestatus.com/`
 
 ### Nexus 5x
 
-Command: `chromium-browser --headless --disable-gpu --screenshot --window-size=412,732 https://www.chromestatus.com/`
+Command: `chromium-browser --headless --disable-gpu --screenshot --no-sandbox --window-size=412,732 https://www.chromestatus.com/`
 
 # Reference
 
@@ -65,5 +65,5 @@ docker run -it --rm zenika/alpine-chrome cat /etc/alpine-release
 
 ```
 docker run -it --rm zenika/alpine-chrome chromium-browser --version
-Chromium 61.0.3163.100
+Chromium 63.0.3239.108 
 ```
