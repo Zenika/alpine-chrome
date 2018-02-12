@@ -17,11 +17,9 @@ RUN apk -U --no-cache \
     ttf-freefont \
     mesa-dri-swrast \
     grep \ 
-    udev
-
-# Minimize size
-RUN apk del --purge --force linux-headers binutils-gold gnupg zlib-dev libc-utils
-RUN rm -rf /var/lib/apt/lists/* \
+    udev \
+    && apk del --purge --force linux-headers binutils-gold gnupg zlib-dev libc-utils \
+    && rm -rf /var/lib/apt/lists/* \
     /var/cache/apk/* \
     /usr/share/man \
     /tmp/* \
