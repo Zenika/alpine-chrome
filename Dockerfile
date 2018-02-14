@@ -28,7 +28,15 @@ RUN apk -U --no-cache \
     /usr/lib/node_modules/npm/html \
     /usr/lib/node_modules/npm/scripts
 
+# Add Chrome as a user
+RUN adduser -D chrome \
+    && chown -R chrome:chrome /usr/src/app
+# Run Chrome non-privileged
+USER chrome
+
 ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 
-CMD sh
+# Autorun chrome headless with no GPU
+ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu"]
+
