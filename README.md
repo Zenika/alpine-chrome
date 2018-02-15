@@ -29,10 +29,14 @@ Explanation for the `no-sandbox` flag in a [quick introduction here](https://www
 Launch the container using:
 `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
 
+This allows to run Chrome with sandboxing but needs unnecessary privileges from a Docker point of view.
+
 ## The best: With seccomp 
 
 Thanks to ever-awesome Jessie Frazelle seccomp profile for Chrome.
+
 [chrome.json](https://github.com/Zenika/alpine-chrome/blob/master/chrome.json)
+
 Also available here `wget https://raw.githubusercontent.com/jfrazelle/dotfiles/master/etc/docker/seccomp/chrome.json`
 
 Launch the container using: 
