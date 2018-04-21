@@ -79,6 +79,10 @@ Command (with no-sandbox):  `docker container run -it --rm -v $(pwd):/usr/src/ap
 
 Command (with no-sandbox):  `docker container run -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome --no-sandbox --screenshot --hide-scrollbars --window-size=412,732 https://www.chromestatus.com/`
 
+### Screenshot owned by current user (by default the file is owned by the container user)
+
+Command (with no-sandbox):  ``docker container run -u `id -u $USER` -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome --no-sandbox --screenshot --hide-scrollbars --window-size=412,732 https://www.chromestatus.com/``
+
 # Reference
 
  * Headless Chrome website : https://developers.google.com/web/updates/2017/04/headless-chrome
