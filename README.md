@@ -97,12 +97,12 @@ Command (with no-sandbox):  ``docker container run -u `id -u $USER` -it --rm -v 
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.6.2
+3.7.0
 ```
 
 ## Chrome version
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 63.0.3239.108 
+Chromium 64.0.3282.168
 ```
