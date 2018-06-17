@@ -83,13 +83,15 @@ Command (with no-sandbox):  `docker container run -it --rm -v $(pwd):/usr/src/ap
 
 Command (with no-sandbox):  ``docker container run -u `id -u $USER` -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome --no-sandbox --screenshot --hide-scrollbars --window-size=412,732 https://www.chromestatus.com/``
 
-# Reference
+# References
 
- * Headless Chrome website : https://developers.google.com/web/updates/2017/04/headless-chrome
+ * Headless Chrome website: https://developers.google.com/web/updates/2017/04/headless-chrome
 
- * Where to file issues : https://github.com/Zenika/alpine-chrome/issues
+ * List of all options of the "Chromium" command line: https://peter.sh/experiments/chromium-command-line-switches/
 
- * Maintained by : https://www.zenika.com
+ * Where to file issues: https://github.com/Zenika/alpine-chrome/issues
+
+ * Maintained by: https://www.zenika.com
 
 # Versions (in latest)
 
