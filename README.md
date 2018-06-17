@@ -42,7 +42,7 @@ Also available here `wget https://raw.githubusercontent.com/jfrazelle/dotfiles/m
 Launch the container using: 
 `docker container run -it --rm --security-opt seccomp=$(pwd)/chrome.json zenika/alpine-chrome`
 
-# How to use
+# How to use in command line
 
 ## Default entrypoint 
 
@@ -82,6 +82,20 @@ Command (with no-sandbox):  `docker container run -it --rm -v $(pwd):/usr/src/ap
 ### Screenshot owned by current user (by default the file is owned by the container user)
 
 Command (with no-sandbox):  ``docker container run -u `id -u $USER` -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome --no-sandbox --screenshot --hide-scrollbars --window-size=412,732 https://www.chromestatus.com/``
+
+# How to use with Puppeteer
+
+With tool like ("Puppeteer")[https://pptr.dev/#?product=Puppeteer&version=v1.5.0&show=api-class-browser], we can add a lot things with our Chrome Headless. 
+
+With some code in NodeJS, we can improve and make some tests.
+
+See the ["with-puppeteer"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer) folder for more details.
+
+If you have a NodeJS/Puppeteer script in your current folder named `my-test.js`, you can launch it using the following command:
+
+```
+docker run -it --rm -v $(pwd):/usr/src/app --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node my-test.js
+```
 
 # References
 
