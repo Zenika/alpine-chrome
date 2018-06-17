@@ -15,7 +15,6 @@ RUN apk -U --no-cache \
     xorg-server \
     dbus \
     ttf-freefont \
-    mesa-dri-swrast \
     grep \ 
     udev \
     && apk del --purge --force linux-headers binutils-gold gnupg zlib-dev libc-utils \
@@ -38,5 +37,5 @@ ENV CHROME_BIN=/usr/bin/chromium-browser
 ENV CHROME_PATH=/usr/lib/chromium/
 
 # Autorun chrome headless with no GPU
-ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu"]
+ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer"]
 
