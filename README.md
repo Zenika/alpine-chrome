@@ -1,6 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
- * `latest`, `64` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+ * `latest`, `68` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 
 # alpine-chrome
 Minimal Headless Chrome Docker Images built on Alpine Linux
@@ -113,12 +113,12 @@ docker run -it --rm -v $(pwd):/usr/src/app --cap-add=SYS_ADMIN zenika/alpine-chr
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.7.0
+3.8.0
 ```
 
 ## Chrome version
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 64.0.3282.168
+Chromium 68.0.3440.75
 ```

@@ -1,12 +1,10 @@
 FROM zenika/alpine-node:latest
 
-# Update apk repositories
-RUN echo "http://dl-2.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories
-RUN echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
-RUN echo "http://dl-2.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
-
-# Install chromium
-RUN apk -U --no-cache \
+# Update apk repositories & install chromium
+RUN echo "http://dl-2.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
+    && echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+    && echo "http://dl-2.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && apk -U --no-cache \
 	--allow-untrusted add \
     zlib-dev \
     chromium \
@@ -30,11 +28,11 @@ RUN apk -U --no-cache \
 # Add Chrome as a user
 RUN adduser -D chrome \
     && chown -R chrome:chrome /usr/src/app
-# Run Chrome non-privileged
+# Run Chrome as non-privileged
 USER chrome
 
-ENV CHROME_BIN=/usr/bin/chromium-browser
-ENV CHROME_PATH=/usr/lib/chromium/
+ENV CHROME_BIN=/usr/bin/chromium-browser \
+    CHROME_PATH=/usr/lib/chromium/
 
 # Autorun chrome headless with no GPU
 ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer"]
