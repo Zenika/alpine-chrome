@@ -1,3 +1,5 @@
+[![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/)
+
 # Supported tags and respective `Dockerfile` links
 
  * `latest`, `68` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
@@ -121,5 +123,5 @@ docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 68.0.3440.75
+Chromium 68.0.3440.106
 ```
