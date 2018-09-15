@@ -116,7 +116,7 @@ docker run -it --rm -v $(pwd):/usr/src/app --cap-add=SYS_ADMIN zenika/alpine-chr
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.8.0
+3.8.1
 ```
 
 ## Chrome version

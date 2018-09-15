@@ -4,6 +4,7 @@ FROM zenika/alpine-node:latest
 RUN echo "http://dl-2.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
     && echo "http://dl-2.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && echo "http://dl-2.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
+    && apk update \
     && apk -U --no-cache \
 	--allow-untrusted add \
     zlib-dev \
