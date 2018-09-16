@@ -8,7 +8,6 @@
 
 # alpine-chrome
 Minimal Headless Chrome Docker Images built on Alpine Linux
-Based on `zenika/alpine-node`
 
 # Why this image
 
