@@ -6,3 +6,4 @@ RUN apk add --no-cache make gcc g++ python git nodejs nodejs-npm \
     /var/cache/apk/* \
     /usr/share/man \
     /tmp/*
+USER chrome
