@@ -24,4 +24,4 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 
 # Autorun chrome headless with no GPU
-ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer"]
+ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage"]
