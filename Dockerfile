@@ -1,16 +1,13 @@
 FROM alpine:latest
 
 # Installs latest Chromium package.
-RUN apk update && apk upgrade \
-    && echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
     && echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
     && apk add --no-cache \
     chromium@edge \
+    harfbuzz@edge \
     nss@edge \
-    && rm -rf /var/lib/apt/lists/* \
-    /var/cache/apk/* \
-    /usr/share/man \
-    /tmp/*
+    && rm -rf /var/cache/*
 
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \

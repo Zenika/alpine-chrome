@@ -4,7 +4,10 @@ set -e
 tagStart=$(expr index "$IMAGE_NAME" :)
 repoName=${IMAGE_NAME:0:tagStart-1}
 
-for tag in 68; do
+CURRENT_VERSION_CHROMIUM=`docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version`
+echo ${CURRENT_VERSION_CHROMIUM:9:2}
+
+for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
     docker tag $IMAGE_NAME ${repoName}:${tag}
     docker push ${repoName}:${tag}
 done
