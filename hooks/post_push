@@ -2,16 +2,12 @@
 set -e
 
 CURRENT_VERSION_CHROMIUM=`docker run --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version`
-EXPECTED_VERSION_CHROMIUM='Chromium 71'
-echo $CURRENT_VERSION_CHROMIUM
 echo ${CURRENT_VERSION_CHROMIUM:9:2}
 
-# if [[ "${CURRENT_VERSION_CHROMIUM:9:2}" == "$EXPECTED_VERSION_CHROMIUM" ]]
-# then
-#     for tag in 71; do
-#         tagStart=$(expr index "$IMAGE_NAME" :)
-#         repoName=${IMAGE_NAME:0:tagStart-1}
-#         docker tag $IMAGE_NAME ${repoName}:${tag}
-#         docker push ${repoName}:${tag}
-#     done
-# fi
+for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
+    echo $tag        
+    tagStart=$(expr index "$IMAGE_NAME" :)
+    repoName=${IMAGE_NAME:0:tagStart-1}
+    docker tag $IMAGE_NAME ${repoName}:${tag}
+    docker push ${repoName}:${tag}
+done
