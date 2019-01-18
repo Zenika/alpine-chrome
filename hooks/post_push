@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-CURRENT_VERSION_CHROMIUM=`docker run --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version`
+CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version`
 echo ${CURRENT_VERSION_CHROMIUM:9:2}
 
 for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
