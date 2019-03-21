@@ -6,4 +6,5 @@ RUN npm install
 COPY --chown=chrome . /usr/src/app
 WORKDIR /usr/src/app
 ENTRYPOINT []
+ENTRYPOINT ["tini", "--"]
 CMD node pdf.js
