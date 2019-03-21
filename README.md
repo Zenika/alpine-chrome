@@ -95,10 +95,10 @@ With some code in NodeJS, we can improve and make some tests.
 
 See the ["with-puppeteer"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer) folder for more details.
 
-If you have a NodeJS/Puppeteer script in your current folder named `my-test.js`, you can launch it using the following command:
+If you have a NodeJS/Puppeteer script in your `src` folder named `pdf.js`, you can launch it using the following command:
 
 ```
-docker run -it --rm -v $(pwd):/usr/src/app --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node my-test.js
+docker run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/pdf.js
 ```
 
 # References
