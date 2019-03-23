@@ -20,7 +20,8 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repos
     chromium@edge \
     harfbuzz@edge \
     nss@edge \
-    && rm -rf /var/cache/*
+    && rm -rf /var/cache/* \
+    && mkdir /var/cache/apk
 
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
