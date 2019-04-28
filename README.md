@@ -2,9 +2,10 @@
 
 # Supported tags and respective `Dockerfile` links
 
-- `latest`, `72` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+- `latest`, `73` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 - `with-node` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `72`
 
 # alpine-chrome
 
@@ -124,5 +125,5 @@ docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 72.0.3626.121
+Chromium 73.0.3683.103
 ```
