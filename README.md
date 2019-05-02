@@ -90,7 +90,7 @@ Command (with no-sandbox): `` docker container run -u `id -u $USER` -it --rm -v 
 
 # How to use with Puppeteer
 
-With tool like ("Puppeteer")[https://pptr.dev/#?product=Puppeteer&version=v1.5.0&show=api-class-browser], we can add a lot things with our Chrome Headless.
+With tool like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.0&show=api-class-browser), we can add a lot things with our Chrome Headless.
 
 With some code in NodeJS, we can improve and make some tests.
 
@@ -118,7 +118,7 @@ docker run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/al
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.8.2
+3.9.3
 ```
 
 ## Chrome version
