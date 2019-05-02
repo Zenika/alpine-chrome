@@ -6,6 +6,7 @@ const puppeteer = require("puppeteer");
     args: [
       "--headless",
       "--disable-gpu",
+      "--disable-dev-shm-usage",
       "--remote-debugging-port=9222",
       "--remote-debugging-address=0.0.0.0"
     ]
