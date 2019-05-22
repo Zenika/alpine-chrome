@@ -6,6 +6,7 @@
 - `with-node` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
 - `72`
+- `with-puppeteer-cn` [(Dockerfile)](https://github.com/huhai463127310/alpine-chrome/blob/with-puppeteer-cn/with-puppeteer-cn/Dockerfile)
 
 # alpine-chrome
 
@@ -100,6 +101,12 @@ If you have a NodeJS/Puppeteer script in your `src` folder named `pdf.js`, you c
 
 ```
 docker run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/pdf.js
+```
+You can use with-puppeteer-cn tag for Chinese,Janpanse and Korean language support.
+
+The following command will take a screenshot for m.baidu.com (the most popular search engine in China), and save the image to `./screentshot.png`.
+```
+docker run -it --rm  -v $(pwd):/home/chrome --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer-cn node src/screenshot.js
 ```
 
 # References

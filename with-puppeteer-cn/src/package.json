@@ -1,0 +1,15 @@
+{
+  "name": "screenshot",
+  "version": "1.0.0",
+  "description": "take a screen shot after page loading done and save to screenshot.png",
+  "main": "screenshot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huhai463127310/alpine-chrome.git"
+  },
+  "author": "huhai463127310",
+  "license": "MIT"
+}
