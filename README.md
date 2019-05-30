@@ -99,8 +99,20 @@ See the ["with-puppeteer"](https://github.com/Zenika/alpine-chrome/blob/master/w
 If you have a NodeJS/Puppeteer script in your `src` folder named `pdf.js`, you can launch it using the following command:
 
 ```
-docker run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/pdf.js
+docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/pdf.js
 ```
+
+With the ["wqy-zenhei"](https://pkgs.alpinelinux.org/package/edge/testing/x86/wqy-zenhei) library, you could also manipulate asian pages like in ["screenshot-asia.js"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/src/screenshot-asia.js)
+
+```
+docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/screenshot-asia.js
+```
+
+These websites are tested with the following supported languages:
+
+- Chinese (with `https://m.baidu.com`)
+- Japanese (with `https://www.yahoo.co.jp/`)
+- Korean (with `https://www.naver.com/`)
 
 # References
 
