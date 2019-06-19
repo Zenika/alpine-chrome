@@ -114,6 +114,23 @@ These websites are tested with the following supported languages:
 - Japanese (with `https://www.yahoo.co.jp/`)
 - Korean (with `https://www.naver.com/`)
 
+# How to use with WebGL
+
+Links:
+
+- https://github.com/adieuadieu/serverless-chrome/issues/108
+- https://github.com/DevExpress/testcafe/issues/2116
+- 'use-gl' values [here](https://cs.chromium.org/chromium/src/ui/gl/gl_switches.cc?type=cs&q=kUseGL&sq=package:chromium&g=0&l=69)
+
+`docker container run -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome --no-sandbox --screenshot --hide-scrollbars https://webglfundamentals.org/webgl/webgl-fundamentals.html`
+
+First, launch using `docker container run -it --rm --cap-add=SYS_ADMIN -v \$(pwd):/usr/src/app --entrypoint "" zenika/alpine-chrome sh`
+
+`chromium-browser --headless --disable-dev-shm-usage --no-sandbox --screenshot --hide-scrollbars https://webglfundamentals.org/webgl/webgl-fundamentals.html`
+
+chromium-browser --headless --use-gl=osmesa --disable-dev-shm-usage --no-sandbox --screenshot --hide-scrollbars https://browserleaks.com/webgl
+or `--use-gl=egl`
+
 # References
 
 - Headless Chrome website: https://developers.google.com/web/updates/2017/04/headless-chrome
