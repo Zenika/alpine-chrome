@@ -14,8 +14,9 @@ Be careful, Chrome can output some `Warning` without affecting the behavior of t
 
 **To Reproduce**
 Steps to reproduce the behavior:
-1. Execute 'docker ....'
-2. See error
+1. Indicate the version of the image using `docker image inspect --format='{{index .RepoDigests 0}}' zenika/alpine-chrome`
+2. Execute 'docker ....'
+3. See error
 If you used some scripts, please attach them.
 
 **Expected behavior**
