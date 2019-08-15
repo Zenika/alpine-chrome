@@ -2,9 +2,10 @@
 
 # Supported tags and respective `Dockerfile` links
 
-- `latest`, `73` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+- `latest`, `76` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 - `with-node` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `73`
 - `72`
 
 # alpine-chrome
