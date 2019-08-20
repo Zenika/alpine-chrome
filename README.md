@@ -131,12 +131,12 @@ These websites are tested with the following supported languages:
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.9.3
+3.10.1
 ```
 
 ## Chrome version
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 73.0.3683.103
+Chromium 76.0.3809.87
 ```
