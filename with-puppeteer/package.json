@@ -13,6 +13,6 @@
   "author": "jlandure",
   "license": "MIT",
   "dependencies": {
-    "puppeteer": "^1.17.0"
+    "puppeteer": "^1.19.0"
   }
 }
