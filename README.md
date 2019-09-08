@@ -22,7 +22,9 @@ Be careful to the "--no-sandbox" flag from Chrome
 
 ## ❌ With nothing
 
-Launching the container using only `docker run -it zenika/alpine-chrome ...` will fail with some logs similar to #33. Be careful and use the 3 others ways to use Chrome Headless.
+Launching the container using only `docker run -it zenika/alpine-chrome ...` will fail with some logs similar to #33
+
+Please use the 3 others ways to use Chrome Headless.
 
 ## ✅ With `--no-sandbox`
 
