@@ -20,7 +20,11 @@ Be careful to the "--no-sandbox" flag from Chrome
 
 # 3 ways to use Chrome Headless with this image
 
-## Not secured
+## ❌ With nothing
+
+Launching the container using only `docker run -it zenika/alpine-chrome ...` will fail with some logs similar to #33. Be careful and use the 3 others ways to use Chrome Headless.
+
+## ✅ With `--no-sandbox`
 
 Launch the container using:
 
@@ -30,14 +34,14 @@ Be careful to know the website you're calling.
 
 Explanation for the `no-sandbox` flag in a [quick introduction here](https://www.google.com/googlebooks/chrome/med_26.html) and for [More in depth design document here](https://chromium.googlesource.com/chromium/src/+/master/docs/design/sandbox.md)
 
-## With SYS_ADMIN capability
+## ✅ With `SYS_ADMIN` capability
 
 Launch the container using:
 `docker container run -it --rm --cap-add=SYS_ADMIN zenika/alpine-chrome`
 
 This allows to run Chrome with sandboxing but needs unnecessary privileges from a Docker point of view.
 
-## The best: With seccomp
+## ✅ The best: With `seccomp`
 
 Thanks to ever-awesome Jessie Frazelle seccomp profile for Chrome.
 
@@ -131,7 +135,7 @@ These websites are tested with the following supported languages:
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.10.1
+3.10.2
 ```
 
 ## Chrome version
