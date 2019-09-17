@@ -22,7 +22,7 @@ Be careful to the "--no-sandbox" flag from Chrome
 
 ## ❌ With nothing
 
-Launching the container using only `docker run -it zenika/alpine-chrome ...` will fail with some logs similar to [#33](https://github.com/Zenika/alpine-chrome/issues/33).
+Launching the container using only `docker container run -it zenika/alpine-chrome ...` will fail with some logs similar to [#33](https://github.com/Zenika/alpine-chrome/issues/33).
 
 Please use the 3 others ways to use Chrome Headless.
 
@@ -60,7 +60,7 @@ Launch the container using:
 
 The default entrypoint does the following command: `chromium-browser --headless --disable-gpu`
 
-You can get full control by overriding the entrypoint using: `docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser ...`
+You can get full control by overriding the entrypoint using: `docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser ...`
 
 ## Use the devtools
 
@@ -136,13 +136,13 @@ These websites are tested with the following supported languages:
 ## Alpine version
 
 ```
-docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
+docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
 3.10.2
 ```
 
 ## Chrome version
 
 ```
-docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
+docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
 Chromium 76.0.3809.87
 ```
