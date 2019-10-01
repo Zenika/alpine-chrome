@@ -16,7 +16,8 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
 # Installs latest Chromium package.
 RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
     && echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
-    && apk add --no-cache \
+    && apk add --force-broken-world --no-cache \
+    libstdc++@edge \
     chromium@edge \
     harfbuzz@edge \
     nss@edge \
