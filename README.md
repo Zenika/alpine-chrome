@@ -144,5 +144,5 @@ docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpi
 
 ```
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 76.0.3809.87
+Chromium 77.0.3865.75
 ```
