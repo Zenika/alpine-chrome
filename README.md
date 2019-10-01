@@ -7,6 +7,7 @@
 - `with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
 - `76`, `73`, `72`, `71`, `68`, `64`
 - `76-with-node`
+- `76-with-puppeteer`
 
 # alpine-chrome
 
