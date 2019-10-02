@@ -1,3 +1,6 @@
+#!/bin/bash
+set -e
+
 CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-node chromium-browser --version`
 echo ${CURRENT_VERSION_CHROMIUM:9:2}
 CURRENT_NODE_VERSION=`docker run -it --rm --entrypoint "" zenika/alpine-chrome:with-node node -v`
