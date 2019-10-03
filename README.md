@@ -3,8 +3,8 @@
 # Supported tags and respective `Dockerfile` links
 
 - `latest`, `77` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
-- `with-node` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
-- `with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `with-node`, `77-with-node`, `77-with-node-10` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
+- `with-puppeteer`, `77-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
 - `76`, `73`, `72`, `71`, `68`, `64`
 - `76-with-node`
 - `76-with-puppeteer`
