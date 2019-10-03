@@ -3,8 +3,8 @@ set -e
 
 CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-node chromium-browser --version`
 echo ${CURRENT_VERSION_CHROMIUM:9:2}
-#CURRENT_NODE_VERSION=`docker container run -it --rm --entrypoint "" zenika/alpine-chrome:with-node node -v`
-#echo ${CURRENT_NODE_VERSION:1:2}
+CURRENT_NODE_VERSION=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-node node -v`
+echo ${CURRENT_NODE_VERSION:1:2}
 
 for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
     echo $tag        
@@ -12,6 +12,6 @@ for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
     repoName=${IMAGE_NAME:0:tagStart-1}
     docker tag $IMAGE_NAME ${repoName}:${tag}-with-node
     docker push ${repoName}:${tag}-with-node
-#    docker tag $IMAGE_NAME ${repoName}:${tag}-with-node-${CURRENT_NODE_VERSION:1:2}
-#    docker push ${repoName}:${tag}-with-node-${CURRENT_NODE_VERSION:1:2}
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-node-${CURRENT_NODE_VERSION:1:2}
+    docker push ${repoName}:${tag}-with-node-${CURRENT_NODE_VERSION:1:2}
 done
