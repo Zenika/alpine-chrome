@@ -41,5 +41,9 @@ RUN apk add --allow-untrusted $(find /home -name chromium-80*) \
 USER chrome
 WORKDIR /usr/src/app
 
+COPY --chown=chrome package.json package-lock.json ./
+RUN npm install
+COPY --chown=chrome . ./
+
 ENTRYPOINT ["tini", "--"]
 CMD ["node", "src/pdf"]

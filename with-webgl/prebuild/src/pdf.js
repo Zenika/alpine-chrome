@@ -3,9 +3,11 @@ const puppeteer = require("puppeteer");
 (async () => {
   const browser = await puppeteer.launch({
     bindAddress: "0.0.0.0",
+    executablePath: '/usr/bin/chromium-browser',
     args: [
       "--headless",
-      "--disable-gpu",
+      "--no-sandbox",
+      "--hide-scrollbars",
       "--disable-dev-shm-usage",
       "--remote-debugging-port=9222",
       "--remote-debugging-address=0.0.0.0"
@@ -16,7 +18,7 @@ const puppeteer = require("puppeteer");
     waitUntil: "networkidle2"
   });
   await page.pdf({
-    path: "src/devfest.pdf",
+    path: "devtest.pdf",
     printBackground: true,
     format: "A4"
   });

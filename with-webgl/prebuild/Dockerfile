@@ -15,5 +15,9 @@ RUN apk add --allow-untrusted /home/chrome/chromium-80.0.3987.149-r0.apk
 USER chrome
 WORKDIR /usr/src/app
 
+COPY --chown=chrome package.json package-lock.json ./
+RUN npm install
+COPY --chown=chrome . ./
+
 ENTRYPOINT ["tini", "--"]
 CMD ["node", "src/pdf"]
