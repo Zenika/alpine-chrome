@@ -12,7 +12,7 @@ const puppeteer = require("puppeteer");
     ]
   });
   const page = await browser.newPage();
-  await page.goto("https://devfest.gdgnantes.com/", {
+  await page.goto("https://browserleaks.com/webgl", {
     waitUntil: "networkidle2"
   });
   await page.pdf({
