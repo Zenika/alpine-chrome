@@ -26,6 +26,11 @@ RUN echo @edge http://nl.alpinelinux.org/alpine/edge/community > /etc/apk/reposi
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
+ADD swiftshader/libEGL.so /usr/lib/chromium/swiftshader/libEGL.so
+ADD swiftshader/libGLESv2.so /usr/lib/chromium/swiftshader/libGLESv2.so
+RUN chmod 755 /usr/lib/chromium/swiftshader/libEGL.so
+RUN chmod 755 /usr/lib/chromium/swiftshader/libGLESv2.so
+
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
