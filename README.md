@@ -137,13 +137,13 @@ These websites are tested with the following supported languages:
 ## Alpine version
 
 ```
-docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.10.2
+docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
+3.11.5
 ```
 
 ## Chrome version
 
 ```
-docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 77.0.3865.75
+docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
+Chromium 80.0.3987.149
 ```
