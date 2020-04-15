@@ -6,7 +6,7 @@
 - `with-node`, `80-with-node`, `80-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer`, `80-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
 - `77`, `76`, `73`, `72`, `71`, `68`, `64`
-- `76-with-node`, `76-with-node`, 
+- `76-with-node`, `77-with-node`,
 - `76-with-puppeteer`, `77-with-puppeteer`
 
 # alpine-chrome
@@ -121,6 +121,18 @@ These websites are tested with the following supported languages:
 - Chinese (with `https://m.baidu.com`)
 - Japanese (with `https://www.yahoo.co.jp/`)
 - Korean (with `https://www.naver.com/`)
+
+# How to use with WebGL
+
+Links:
+
+- https://github.com/adieuadieu/serverless-chrome/issues/108
+- https://github.com/DevExpress/testcafe/issues/2116
+- 'use-gl' values [here](https://cs.chromium.org/chromium/src/ui/gl/gl_switches.cc?type=cs&q=kUseGL&sq=package:chromium&g=0&l=69)
+
+`docker container run -it --rm --cap-add=SYS_ADMIN -v $(pwd):/usr/src/app zenika/alpine-chrome:with-webgl --screenshot --hide-scrollbars https://webglfundamentals.org/webgl/webgl-fundamentals.html`
+
+`docker container run -it --rm --cap-add=SYS_ADMIN -v $(pwd):/usr/src/app zenika/alpine-chrome:with-webgl --screenshot --hide-scrollbars https://browserleaks.com/webgl`
 
 # References
 
