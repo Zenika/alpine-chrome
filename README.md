@@ -1,6 +1,6 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-20-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -203,6 +203,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.rom.by"><img src="https://avatars2.githubusercontent.com/u/2912732?v=4" width="100px;" alt=""/><br /><sub><b>George Gaál</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Agecube" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/wheestermans31"><img src="https://avatars1.githubusercontent.com/u/41023907?v=4" width="100px;" alt=""/><br /><sub><b>wheestermans31</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Awheestermans31" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/hodossy"><img src="https://avatars1.githubusercontent.com/u/19623656?v=4" width="100px;" alt=""/><br /><sub><b>Hodossy, Szabolcs</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ahodossy" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/ardeois"><img src="https://avatars0.githubusercontent.com/u/1867939?v=4" width="100px;" alt=""/><br /><sub><b>Corentin Ardeois</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Aardeois" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
