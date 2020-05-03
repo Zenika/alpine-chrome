@@ -24,6 +24,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "sargonpiraev",
+      "name": "Sargon Piraev",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/9588637?v=4",
+      "profile": "https://github.com/sargonpiraev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
