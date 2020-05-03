@@ -249,6 +249,15 @@
         "bug",
         "ideas"
       ]
+    },
+    {
+      "login": "jketterl",
+      "name": "Jakob Ketterl",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/180748?v=4",
+      "profile": "https://github.com/jketterl",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
