@@ -239,6 +239,16 @@
         "question",
         "maintenance"
       ]
+    },
+    {
+      "login": "x0rzkov",
+      "name": "x0rzkov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/56916043?v=4",
+      "profile": "https://twitter.com/x0rzkov",
+      "contributions": [
+        "bug",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
