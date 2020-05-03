@@ -225,6 +225,20 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "jlandure",
+      "name": "Julien Landuré",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/525974?v=4",
+      "profile": "https://blog.zenika.com/author/jlandure/",
+      "contributions": [
+        "code",
+        "review",
+        "test",
+        "ideas",
+        "question",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
