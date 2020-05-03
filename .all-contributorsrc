@@ -61,6 +61,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "jllado",
+      "name": "Juan Lladó",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/628929?v=4",
+      "profile": "https://twitter.com/jllado",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
