@@ -97,6 +97,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "alexandru-calinoiu",
+      "name": "Calinoiu Alexandru Nicolae",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/679198?v=4",
+      "profile": "https://ro.linkedin.com/in/alexandrucalinoiu",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
