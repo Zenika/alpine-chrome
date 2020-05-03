@@ -1,6 +1,6 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -187,6 +187,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/huhai463127310"><img src="https://avatars1.githubusercontent.com/u/1825820?v=4" width="100px;" alt=""/><br /><sub><b>栩风</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=huhai463127310" title="Code">💻</a> <a href="#ideas-huhai463127310" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://rubyisforfun.com"><img src="https://avatars3.githubusercontent.com/u/1477672?v=4" width="100px;" alt=""/><br /><sub><b>Roman Pushkin</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=ro31337" title="Code">💻</a></td>
     <td align="center"><a href="https://twitter.com/jllado"><img src="https://avatars2.githubusercontent.com/u/628929?v=4" width="100px;" alt=""/><br /><sub><b>Juan Lladó</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=jllado" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/c24w"><img src="https://avatars2.githubusercontent.com/u/710406?v=4" width="100px;" alt=""/><br /><sub><b>Chris Watson</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ac24w" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

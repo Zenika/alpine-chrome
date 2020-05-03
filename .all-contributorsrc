@@ -70,6 +70,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "c24w",
+      "name": "Chris Watson",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/710406?v=4",
+      "profile": "https://github.com/c24w",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
