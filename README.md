@@ -2,13 +2,13 @@
 
 # Supported tags and respective `Dockerfile` links
 
-- `latest`, `80` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+- `latest`, `81` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 - `with-webgl` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-webgl/Dockerfile)
-- `with-node`, `80-with-node`, `80-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
-- `with-puppeteer`, `80-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
-- `77`, `76`, `73`, `72`, `71`, `68`, `64`
-- `76-with-node`, `77-with-node`,
-- `76-with-puppeteer`, `77-with-puppeteer`
+- `with-node`, `81-with-node`, `81-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
+- `with-puppeteer`, `81-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
+- `80-with-node`, `77-with-node`, `76-with-node`
+- `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
 
 # alpine-chrome
 
@@ -151,12 +151,19 @@ Links:
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.11.5
+3.11.6
 ```
 
 ## Chrome version
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 80.0.3987.149
+Chromium 81.0.4044.113
+```
+
+## Image disk size
+
+```
+docker image inspect zenika/alpine-chrome --format='{{.Size}}'
+368279892
 ```
