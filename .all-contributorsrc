@@ -106,6 +106,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "mamacdon",
+      "name": "Mark Macdonald",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/382404?v=4",
+      "profile": "https://github.com/mamacdon",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
