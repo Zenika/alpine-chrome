@@ -52,6 +52,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "ro31337",
+      "name": "Roman Pushkin",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1477672?v=4",
+      "profile": "https://rubyisforfun.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
