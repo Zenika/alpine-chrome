@@ -1,6 +1,6 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -201,6 +201,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://emil.kjer.info"><img src="https://avatars2.githubusercontent.com/u/970602?v=4" width="100px;" alt=""/><br /><sub><b>Emil Kjer</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Aemilkjer" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/likwid"><img src="https://avatars1.githubusercontent.com/u/523407?v=4" width="100px;" alt=""/><br /><sub><b>Jeff Gonzalez</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Alikwid" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.rom.by"><img src="https://avatars2.githubusercontent.com/u/2912732?v=4" width="100px;" alt=""/><br /><sub><b>George Gaál</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Agecube" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/wheestermans31"><img src="https://avatars1.githubusercontent.com/u/41023907?v=4" width="100px;" alt=""/><br /><sub><b>wheestermans31</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Awheestermans31" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
