@@ -6,6 +6,20 @@
   "commit": false,
   "contributors": [
     {
+      "login": "jlandure",
+      "name": "Julien Landuré",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/525974?v=4",
+      "profile": "https://blog.zenika.com/author/jlandure/",
+      "contributions": [
+        "code",
+        "review",
+        "test",
+        "ideas",
+        "question",
+        "maintenance"
+      ]
+    },
+    {
       "login": "lygstate",
       "name": "Yonggang Luo",
       "avatar_url": "https://avatars3.githubusercontent.com/u/121040?v=4",
@@ -225,20 +239,6 @@
       "profile": "https://github.com/nrawat151290",
       "contributions": [
         "bug"
-      ]
-    },
-    {
-      "login": "jlandure",
-      "name": "Julien Landuré",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/525974?v=4",
-      "profile": "https://blog.zenika.com/author/jlandure/",
-      "contributions": [
-        "code",
-        "review",
-        "test",
-        "ideas",
-        "question",
-        "maintenance"
       ]
     },
     {
