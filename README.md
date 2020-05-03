@@ -1,6 +1,6 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -196,6 +196,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/mamacdon"><img src="https://avatars2.githubusercontent.com/u/382404?v=4" width="100px;" alt=""/><br /><sub><b>Mark Macdonald</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Amamacdon" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://www.thisiswhytheinternetexists.com"><img src="https://avatars0.githubusercontent.com/u/5497269?v=4" width="100px;" alt=""/><br /><sub><b>Felix Mann</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3ADJFliX" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/horacimacias"><img src="https://avatars2.githubusercontent.com/u/1333208?v=4" width="100px;" alt=""/><br /><sub><b>horacimacias</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ahoracimacias" title="Bug reports">🐛</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://emil.kjer.info"><img src="https://avatars2.githubusercontent.com/u/970602?v=4" width="100px;" alt=""/><br /><sub><b>Emil Kjer</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Aemilkjer" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
