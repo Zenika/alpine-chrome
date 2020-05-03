@@ -1,6 +1,6 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -212,6 +212,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/nrawat151290"><img src="https://avatars1.githubusercontent.com/u/3829598?v=4" width="100px;" alt=""/><br /><sub><b>nrawat151290</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Anrawat151290" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://blog.zenika.com/author/jlandure/"><img src="https://avatars2.githubusercontent.com/u/525974?v=4" width="100px;" alt=""/><br /><sub><b>Julien Landuré</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=jlandure" title="Code">💻</a> <a href="https://github.com/Zenika/alpine-chrome/pulls?q=is%3Apr+reviewed-by%3Ajlandure" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/Zenika/alpine-chrome/commits?author=jlandure" title="Tests">⚠️</a> <a href="#ideas-jlandure" title="Ideas, Planning, & Feedback">🤔</a> <a href="#question-jlandure" title="Answering Questions">💬</a> <a href="#maintenance-jlandure" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://twitter.com/x0rzkov"><img src="https://avatars3.githubusercontent.com/u/56916043?v=4" width="100px;" alt=""/><br /><sub><b>x0rzkov</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ax0rzkov" title="Bug reports">🐛</a> <a href="#ideas-x0rzkov" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/jketterl"><img src="https://avatars0.githubusercontent.com/u/180748?v=4" width="100px;" alt=""/><br /><sub><b>Jakob Ketterl</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ajketterl" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
