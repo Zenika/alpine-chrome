@@ -1,6 +1,6 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-23-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -209,6 +209,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/chadlwilson"><img src="https://avatars1.githubusercontent.com/u/29788154?v=4" width="100px;" alt=""/><br /><sub><b>Chad Wilson</b></sub></a><br /><a href="#question-chadlwilson" title="Answering Questions">💬</a> <a href="#ideas-chadlwilson" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/fenchu"><img src="https://avatars1.githubusercontent.com/u/11349883?v=4" width="100px;" alt=""/><br /><sub><b>fenchu</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Afenchu" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/nrawat151290"><img src="https://avatars1.githubusercontent.com/u/3829598?v=4" width="100px;" alt=""/><br /><sub><b>nrawat151290</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Anrawat151290" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
