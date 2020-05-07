@@ -189,7 +189,7 @@ docker image inspect zenika/alpine-chrome --format='{{.Size}}'
 368279892
 ```
 
-## Contributors ✨
+# ✨ Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
