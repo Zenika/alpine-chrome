@@ -1,6 +1,9 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-27-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -138,6 +141,21 @@ Links:
 
 `docker container run -it --rm --cap-add=SYS_ADMIN -v $(pwd):/usr/src/app zenika/alpine-chrome:with-webgl --screenshot --hide-scrollbars https://browserleaks.com/webgl`
 
+# Run as root and override defaut entrypoint
+
+We can run the container as root with this command:
+
+```
+docker container run --rm -it --entrypoint "" --user root zenika/alpine-chrome sh
+```
+
+# Run examples
+
+Some examples are available on the `examples` [directory](examples):
+
+- [docker-compose](https://github.com/Zenika/alpine-chrome/blob/master/examples/docker-compose) to launch a chrome calling a nginx server in the same docker-compose
+- [x11](https://github.com/Zenika/alpine-chrome/blob/master/examples/x11) to experiment this image with a X11 server.
+
 # References
 
 - Headless Chrome website: https://developers.google.com/web/updates/2017/04/headless-chrome
@@ -218,6 +236,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
