@@ -15,6 +15,11 @@ docker-compose up
 Then go to `localhost:9222` with your browser.
 You can enter `nginx` like the name of the service you want to call.
 
+You will see somethingl like that:
+
+<img width="951" alt="Capture d’écran 2020-05-06 à 22 43 52" src="https://user-images.githubusercontent.com/525974/81261911-34b67900-903d-11ea-9f3c-14aca6fc0477.png">
+
+
 ## Logs
 
 ```
