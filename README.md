@@ -129,6 +129,16 @@ These websites are tested with the following supported languages:
 - Japanese (with `https://www.yahoo.co.jp/`)
 - Korean (with `https://www.naver.com/`)
 
+# How to use with Playwright
+
+Like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.0&show=api-class-browser), we can do a lot things using ["Playwright"](https://playwright.dev/#version=v1.0.1&path=docs%2Fcore-concepts.md&q=browser) with our Chrome Headless.
+
+Go to the `with-playwright` folder and launch the following command:
+
+```
+docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-playwright npm start
+```
+
 # How to use with WebGL
 
 Links:
