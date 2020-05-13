@@ -30,6 +30,9 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositorie
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
+COPY ./with-webgl/swiftshader/libEGL.so ./with-webgl/swiftshader/libGLESv2.so /usr/lib/chromium/swiftshader/
+RUN chmod 755 /usr/lib/chromium/swiftshader/libEGL.so /usr/lib/chromium/swiftshader/libGLESv2.so
+
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
@@ -41,5 +44,5 @@ WORKDIR /usr/src/app
 ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 
-# Autorun chrome headless with no GPU
-ENTRYPOINT ["chromium-browser", "--headless", "--disable-gpu", "--disable-software-rasterizer", "--disable-dev-shm-usage"]
+# Autorun chrome headless
+ENTRYPOINT ["chromium-browser", "--headless", "--use-gl=swiftshader", "--disable-software-rasterizer", "--disable-dev-shm-usage"]
