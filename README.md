@@ -103,6 +103,34 @@ Command (with no-sandbox): `docker container run -it --rm -v $(pwd):/usr/src/app
 
 Command (with no-sandbox): `` docker container run -u `id -u $USER` -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome --no-sandbox --screenshot --hide-scrollbars --window-size=412,732 https://www.chromestatus.com/ ``
 
+# How to use with Deno
+
+Go the deno `src` folder. Build your image using this command:
+
+```
+docker image build -t zenika/alpine-chrome:with-deno-sample .
+```
+
+Then launch the container:
+
+```
+docker container run -it --rm zenika/alpine-chrome:with-deno-sample
+ Download https://deno.land/std/examples/welcome.ts
+ Warning Implicitly using master branch https://deno.land/std/examples/welcome.ts
+ Compile https://deno.land/std/examples/welcome.ts
+ Welcome to Deno 🦕
+```
+
+With your own file, use this command:
+
+```
+docker container run -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome:with-deno-sample run helloworld.ts
+Compile file:///usr/src/app/helloworld.ts
+Download https://deno.land/std/fmt/colors.ts
+Warning Implicitly using master branch https://deno.land/std/fmt/colors.ts
+Hello world!
+```
+
 # How to use with Puppeteer
 
 With tool like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.0&show=api-class-browser), we can add a lot things with our Chrome Headless.
