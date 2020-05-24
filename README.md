@@ -24,7 +24,7 @@ We often need a headless chrome.
 We created this image to get a fully headless chrome image.
 Be careful to the "--no-sandbox" flag from Chrome
 
-# 3 ways to use Chrome Headless with this image
+# 3 ways to securely use Chrome Headless with this image
 
 ## ❌ With nothing
 
@@ -51,7 +51,7 @@ This allows to run Chrome with sandboxing but needs unnecessary privileges from 
 
 ## ✅ The best: With `seccomp`
 
-Thanks to ever-awesome Jessie Frazelle seccomp profile for Chrome.
+Thanks to ever-awesome Jessie Frazelle seccomp profile for Chrome. This is The most secure way to run this Headless Chrome docker image.
 
 [chrome.json](https://github.com/Zenika/alpine-chrome/blob/master/chrome.json)
 
