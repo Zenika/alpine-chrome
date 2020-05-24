@@ -259,6 +259,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "piotr-sikora-v",
+      "name": "Piotr Sikora",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1295000?v=4",
+      "profile": "http://virus.hostv.pl",
+      "contributions": [
+        "bug",
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
