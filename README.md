@@ -183,7 +183,7 @@ Links:
 - https://github.com/DevExpress/testcafe/issues/2116
 - 'use-gl' values [here](https://cs.chromium.org/chromium/src/ui/gl/gl_switches.cc?type=cs&q=kUseGL&sq=package:chromium&g=0&l=69)
 
-# Run as root and override defaut entrypoint
+# Run as root and override default entrypoint
 
 We can run the container as root with this command:
 
