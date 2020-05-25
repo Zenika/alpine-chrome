@@ -1,7 +1,7 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-28-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-29-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -274,6 +274,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://twitter.com/x0rzkov"><img src="https://avatars3.githubusercontent.com/u/56916043?v=4" width="100px;" alt=""/><br /><sub><b>x0rzkov</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ax0rzkov" title="Bug reports">🐛</a> <a href="#ideas-x0rzkov" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://github.com/jketterl"><img src="https://avatars0.githubusercontent.com/u/180748?v=4" width="100px;" alt=""/><br /><sub><b>Jakob Ketterl</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Ajketterl" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://virus.hostv.pl"><img src="https://avatars1.githubusercontent.com/u/1295000?v=4" width="100px;" alt=""/><br /><sub><b>Piotr Sikora</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Apiotr-sikora-v" title="Bug reports">🐛</a> <a href="#ideas-piotr-sikora-v" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/pgrimaud"><img src="https://avatars1.githubusercontent.com/u/1866496?v=4" width="100px;" alt=""/><br /><sub><b>Pierre Grimaud</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=pgrimaud" title="Code">💻</a></td>
   </tr>
 </table>
 
