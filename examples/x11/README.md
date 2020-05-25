@@ -39,7 +39,7 @@ docker container run --rm -it -e DISPLAY=host.docker.internal:0 --cap-add=SYS_AD
 
 ## Testing with xeyes
 
-Launch this commmand to check your X11 setup:
+Launch this command to check your X11 setup:
 
 ```
 docker container run --rm -it -e DISPLAY=host.docker.internal:0 gns3/xeyes
