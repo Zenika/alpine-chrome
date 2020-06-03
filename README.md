@@ -164,8 +164,10 @@ Like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.0&show=api
 Go to the `with-playwright` folder and launch the following command:
 
 ```
-docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-playwright npm start
+docker container run -it --rm -v $(pwd):/usr/src/app --cap-add=SYS_ADMIN zenika/alpine-chrome:with-playwright npm start
 ```
+
+A `example-chromium.png` file will be created in your `with-playwright` folder.
 
 # How to use with WebGL
 
