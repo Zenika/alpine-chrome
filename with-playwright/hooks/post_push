@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-playwright chromium-browser --version`
+echo ${CURRENT_VERSION_CHROMIUM:9:2}
+
+for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
+    echo $tag        
+    tagStart=$(expr index "$IMAGE_NAME" :)
+    repoName=${IMAGE_NAME:0:tagStart-1}
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-playwright
+    docker push ${repoName}:${tag}-with-playwright
+done
