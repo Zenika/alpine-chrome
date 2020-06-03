@@ -12,6 +12,7 @@
 - `with-webgl` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-webgl/Dockerfile)
 - `with-node`, `83-with-node`, `83-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer`, `83-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `with-playwright`, `83-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
 - `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
 - `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
 - `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
