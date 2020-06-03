@@ -30,9 +30,6 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositorie
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
 
-COPY ./with-webgl/swiftshader/libEGL.so ./with-webgl/swiftshader/libGLESv2.so /usr/lib/chromium/swiftshader/
-RUN chmod 755 /usr/lib/chromium/swiftshader/libEGL.so /usr/lib/chromium/swiftshader/libGLESv2.so
-
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
     && adduser -D chrome \
