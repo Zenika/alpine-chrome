@@ -288,6 +288,16 @@
         "question",
         "ideas"
       ]
+    },
+    {
+      "login": "llange",
+      "name": "llange",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/222432?v=4",
+      "profile": "https://github.com/llange",
+      "contributions": [
+        "bug",
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
