@@ -1,7 +1,7 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-30-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-31-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -280,6 +280,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/pgrimaud"><img src="https://avatars1.githubusercontent.com/u/1866496?v=4" width="100px;" alt=""/><br /><sub><b>Pierre Grimaud</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=pgrimaud" title="Code">💻</a></td>
     <td align="center"><a href="http://www.niekvandermaas.nl"><img src="https://avatars0.githubusercontent.com/u/213140?v=4" width="100px;" alt=""/><br /><sub><b>Niek van der Maas</b></sub></a><br /><a href="#question-Niek" title="Answering Questions">💬</a> <a href="#ideas-Niek" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/llange"><img src="https://avatars0.githubusercontent.com/u/222432?v=4" width="100px;" alt=""/><br /><sub><b>llange</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Allange" title="Bug reports">🐛</a> <a href="https://github.com/Zenika/alpine-chrome/commits?author=llange" title="Code">💻</a></td>
   </tr>
 </table>
 
