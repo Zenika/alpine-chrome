@@ -223,14 +223,14 @@ docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
 
 ```
 docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 83.0.4103.61
+Chromium 83.0.4103.97
 ```
 
 ## Image disk size
 
 ```
 docker image inspect zenika/alpine-chrome --format='{{.Size}}'
-397416106
+392274511
 ```
 
 # ✨ Contributors
