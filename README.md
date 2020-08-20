@@ -293,3 +293,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 # 🎉 Show your support
 
 ⭐️ this repo or [leave a comment here](https://github.com/Zenika/alpine-chrome/issues/new?template=03_thanks.md)
+💚 Support this repository using [GitHub Sponsor](https://github.com/sponsors/jlandure/)
