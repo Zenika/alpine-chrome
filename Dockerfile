@@ -26,9 +26,12 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositorie
     nss \
     freetype \
     ttf-freefont \
+    font-noto-emoji \
     wqy-zenhei \
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
+
+COPY local.conf /etc/fonts/local.conf
 
 # Add Chrome as a user
 RUN mkdir -p /usr/src/app \
