@@ -215,14 +215,14 @@ Some examples are available on the `examples` [directory](examples):
 ## Alpine version
 
 ```
-docker run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
+docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
 3.12.0
 ```
 
 ## Chrome version
 
 ```
-docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
+docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
 Chromium 83.0.4103.97
 ```
 
