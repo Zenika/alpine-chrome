@@ -31,11 +31,11 @@ If applicable, add logs to help explain your problem.
 
 **Versions**
 
-| Software      | Version(s)   | How-to                                                                                |
-| ------------- | ------------ | ------------------------------------------------------------------------------------- |
-| Chromium      | 76.0.3809.87 | `docker run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version` |
-| Image         | ad3dc8       | `docker image inspect --format='{{index .RepoDigests 0}}' zenika/alpine-chrome`       |
-| Docker Engine | 18.09        | `docker version`                                                                      |
+| Software      | Version(s)   | How-to                                                                                          |
+| ------------- | ------------ | ----------------------------------------------------------------------------------------------- |
+| Chromium      | 76.0.3809.87 | `docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version` |
+| Image         | ad3dc8       | `docker image inspect --format='{{index .RepoDigests 0}}' zenika/alpine-chrome`                 |
+| Docker Engine | 18.09        | `docker version`                                                                                |
 
 **Additional context**
 Add any other context about the problem here.
