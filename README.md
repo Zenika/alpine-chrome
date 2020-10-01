@@ -6,13 +6,13 @@
 
 # Supported tags and respective `Dockerfile` links
 
-- `latest`, `83` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
-- `with-node`, `83-with-node`, `83-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
-- `with-puppeteer`, `83-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
-- `with-playwright`, `83-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
-- `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
-- `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
-- `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
+- `latest`, `85` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+- `with-node`, `85-with-node`, `85-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
+- `with-puppeteer`, `85-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `with-playwright`, `85-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
+- `84`, `83`, `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
+- `84-with-puppeteer`, `83-with-puppeteer`, `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
+- `84-with-puppeteer`, `83-with-puppeteer`, `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
 
 # alpine-chrome
 
