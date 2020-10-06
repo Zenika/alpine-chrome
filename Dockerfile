@@ -19,7 +19,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositorie
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/v3.11/main" >> /etc/apk/repositories \
     && apk upgrade -U -a \
-    && apk add --no-cache \
+    && apk add \
     libstdc++ \
     chromium \
     harfbuzz \
