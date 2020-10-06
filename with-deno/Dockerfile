@@ -54,11 +54,7 @@ RUN apk add --no-cache tini curl && \
     rm deno.zip && \
     chmod 755 deno && \
     mv deno /usr/bin/deno && \
-    apk del curl && \
-	rm -rf /var/lib/apt/lists/* \
-    /var/cache/apk/* \
-    /usr/share/man \
-    /tmp/*
+    apk del curl
 
 USER chrome
 ENTRYPOINT ["tini", "--"]
