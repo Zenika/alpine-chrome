@@ -12,6 +12,6 @@ for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
     repoName=${IMAGE_NAME:0:tagStart-1}
     docker tag $IMAGE_NAME ${repoName}:${tag}-with-selenoid 
     docker push ${repoName}:${tag}-with-selenoid 
-    docker tag $IMAGE_NAME ${repoName}:${tag}-with-selenoid -${CURRENT_SELENOID_VERSION:14:4}
-    docker push ${repoName}:${tag}-with-selenoid -${CURRENT_SELENOID_VERSION:14:4}
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-selenoid-${CURRENT_SELENOID_VERSION:14:4}
+    docker push ${repoName}:${tag}-with-selenoid-${CURRENT_SELENOID_VERSION:14:4}
 done
