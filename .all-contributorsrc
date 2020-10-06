@@ -307,6 +307,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "neelkamath",
+      "name": "Neel Kamath",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24778804?v=4",
+      "profile": "https://neelkamath.com",
+      "contributions": [
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
