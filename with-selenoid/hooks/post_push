@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-selenoid chromium-browser --version`
+echo ${CURRENT_VERSION_CHROMIUM:9:2}
+CURRENT_SELENOID_VERSION=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-selenoid selenoid -version`
+echo ${CURRENT_SELENOID_VERSION:14:4}
+
+for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
+    echo $tag        
+    tagStart=$(expr index "$IMAGE_NAME" :)
+    repoName=${IMAGE_NAME:0:tagStart-1}
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-selenoid 
+    docker push ${repoName}:${tag}-with-selenoid 
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-selenoid-${CURRENT_SELENOID_VERSION:14:4}
+    docker push ${repoName}:${tag}-with-selenoid-${CURRENT_SELENOID_VERSION:14:4}
+done

@@ -1,0 +1,13 @@
+{
+    "chrome": {
+        "default": "latest",
+        "versions": {
+            "latest": {
+                "image": [
+                    "chromedriver",
+                    "--whitelisted-ips"
+                ]
+            }
+        }
+    }
+}
