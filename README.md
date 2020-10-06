@@ -1,7 +1,7 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Docker Stars](https://img.shields.io/docker/stars/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-33-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-34-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Supported tags and respective `Dockerfile` links
@@ -283,6 +283,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/llange"><img src="https://avatars0.githubusercontent.com/u/222432?v=4" width="100px;" alt=""/><br /><sub><b>llange</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/issues?q=author%3Allange" title="Bug reports">🐛</a> <a href="https://github.com/Zenika/alpine-chrome/commits?author=llange" title="Code">💻</a></td>
     <td align="center"><a href="http://agengdp.github.io"><img src="https://avatars1.githubusercontent.com/u/16035097?v=4" width="100px;" alt=""/><br /><sub><b>Ageng D. Prastyawan</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=agengdp" title="Documentation">📖</a></td>
     <td align="center"><a href="https://neelkamath.com"><img src="https://avatars3.githubusercontent.com/u/24778804?v=4" width="100px;" alt=""/><br /><sub><b>Neel Kamath</b></sub></a><br /><a href="#question-neelkamath" title="Answering Questions">💬</a></td>
+    <td align="center"><a href="https://www.peterdavehello.org/"><img src="https://avatars3.githubusercontent.com/u/3691490?v=4" width="100px;" alt=""/><br /><sub><b>Peter Dave Hello</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=PeterDaveHello" title="Code">💻</a></td>
   </tr>
 </table>
 
