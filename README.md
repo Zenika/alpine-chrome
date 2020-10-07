@@ -10,6 +10,8 @@
 - `with-node`, `85-with-node`, `85-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer`, `85-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
 - `with-playwright`, `85-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
+- `with-selenoid`, `85-with-selenoid` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-selenoid/Dockerfile)
+- `with-chromedriver`, `85-with-chromedriver` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-chromedriver/Dockerfile)
 - `84`, `83`, `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
 - `84-with-puppeteer`, `83-with-puppeteer`, `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
 - `84-with-puppeteer`, `83-with-puppeteer`, `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
@@ -17,6 +19,7 @@
 # alpine-chrome
 
 Chrome running in headless mode in a tiny Alpine image
+****
 
 # Why this image
 
@@ -184,6 +187,31 @@ Links:
 - https://github.com/adieuadieu/serverless-chrome/issues/108
 - https://github.com/DevExpress/testcafe/issues/2116
 - 'use-gl' values [here](https://cs.chromium.org/chromium/src/ui/gl/gl_switches.cc?type=cs&q=kUseGL&sq=package:chromium&g=0&l=69)
+
+# How to use with Chromedriver
+
+[ChromeDriver](https://chromedriver.chromium.org/home) is a separate executable that Selenium WebDriver uses to control Chrome.
+You can use this image as a base for your Docker based selenium tests. See [Guide for running Selenium tests using Chromedriver](https://www.browserstack.com/guide/run-selenium-tests-using-selenium-chromedriver).
+
+# How to use with Selenoid
+
+[Selenoid](https://github.com/aerokube/selenoid) is a powerful implementation of Selenium hub using Docker containers to launch browsers.
+Even if it used to run browsers in docker containers, it can be quite useful as lightweight Selenium replacement.
+`with-selenoid` image is a self sufficient selenium server, chrome and chromedriver installed.
+
+You can run it with following command:
+
+```
+docker container run -it --rm --cap-add=SYS_ADMIN  -p 4444:4444 zenika/alpine-chrome:with-selenoid -capture-driver-logs
+```
+
+And run your tests against `http://localhost:4444/wd/hub`
+
+One of the use-cases might be running automation tests in the environment with restricted Docker environment
+like on some CI systems like GitLab CI, etc. In such case you may not have permissions for `--cap-add=SYS_ADMIN`
+and you will need to pass the `--no-sandbox` to `chromedriver`.
+
+See more [selenoid docs](https://aerokube.com/selenoid/latest/#_using_selenoid_without_docker)
 
 # Run as root and override default entrypoint
 
