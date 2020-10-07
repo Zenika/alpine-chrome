@@ -5,7 +5,7 @@ USER root
 RUN apk add --no-cache ca-certificates tzdata mailcap
 
 COPY --from=selenoid /usr/bin/selenoid /usr/bin/selenoid
-ADD browsers.json /etc/selenoid/browsers.json
+COPY browsers.json /etc/selenoid/browsers.json
 
 USER chrome
 EXPOSE 4444
