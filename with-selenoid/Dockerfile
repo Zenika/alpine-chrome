@@ -2,11 +2,7 @@ FROM aerokube/selenoid:latest-release as selenoid
 FROM zenika/alpine-chrome:with-chromedriver
 
 USER root
-RUN apk add --no-cache ca-certificates tzdata mailcap \
-    && rm -rf /var/lib/apt/lists/* \
-    /var/cache/apk/* \
-    /usr/share/man \
-    /tmp/*
+RUN apk add --no-cache ca-certificates tzdata mailcap
 
 COPY --from=selenoid /usr/bin/selenoid /usr/bin/selenoid
 ADD browsers.json /etc/selenoid/browsers.json
