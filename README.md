@@ -312,7 +312,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://agengdp.github.io"><img src="https://avatars1.githubusercontent.com/u/16035097?v=4" width="100px;" alt=""/><br /><sub><b>Ageng D. Prastyawan</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=agengdp" title="Documentation">📖</a></td>
     <td align="center"><a href="https://neelkamath.com"><img src="https://avatars3.githubusercontent.com/u/24778804?v=4" width="100px;" alt=""/><br /><sub><b>Neel Kamath</b></sub></a><br /><a href="#question-neelkamath" title="Answering Questions">💬</a></td>
     <td align="center"><a href="https://www.peterdavehello.org/"><img src="https://avatars3.githubusercontent.com/u/3691490?v=4" width="100px;" alt=""/><br /><sub><b>Peter Dave Hello</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=PeterDaveHello" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Trane9991"><img src="https://avatars1.githubusercontent.com/u/9948629?v=4" width="100px;" alt=""/><br /><sub><b>Taras</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=Trane9991" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Trane9991"><img src="https://avatars1.githubusercontent.com/u/9948629?v=4" width="100px;" alt=""/><br /><sub><b>Taras</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=Trane9991" title="Code">💻</a> <a href="https://github.com/Zenika/alpine-chrome/commits?author=Trane9991" title="Documentation">📖</a></td>
   </tr>
 </table>
 
