@@ -10,4 +10,4 @@ COPY browsers.json /etc/selenoid/browsers.json
 USER chrome
 EXPOSE 4444
 
-ENTRYPOINT ["/usr/bin/selenoid", "-listen", ":4444", "-conf", "/etc/selenoid/browsers.json"]
+ENTRYPOINT ["/usr/bin/selenoid", "-listen", ":4444", "-disable-docker", "-conf", "/etc/selenoid/browsers.json"]
