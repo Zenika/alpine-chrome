@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+docker image build -t $IMAGE_NAME .
+
+# Alpine version
+docker container run -it --rm --entrypoint "" $IMAGE_NAME cat /etc/alpine-release
+
+# Chrome version
+docker container run -it --rm --entrypoint "" $IMAGE_NAME chromium-browser --version
