@@ -27,17 +27,17 @@ In the world of webdev, the ability to run quickly end-to-end tests are importan
 
 ## 💡 Crafting the perfect container
 
-- 📦 Tiniest Headless Chrome (Compressed size: 162.62MB)
+- 📦 Tiniest Headless Chrome (Compressed size: [162.62MB](https://github.com/Zenika/alpine-chrome#image-disk-size))
 - 🐳 Easy to use, ephemeral and reproducible Headless Chrome with Docker
 - 📝 Doc-friendly with examples for printing the DOM, generating an image with a mobile ratio or generating a PDF.
-- 👷‍♂️ Autobuild with the Docker Hub to sync the project and ship the images with confidence
+- 👷‍♂️ Autobuild with the [Docker Hub](https://id.docker.com/login/?next=%2Fid%2Foauth%2Fauthorize%2F%3Fclient_id%3D43f17c5f-9ba4-4f13-853d-9d0074e349a7%26next%3D%252Frepository%252Fdocker%252Fzenika%252Falpine-chrome%253Fref%253Dlogin%26nonce%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiI0M2YxN2M1Zi05YmE0LTRmMTMtODUzZC05ZDAwNzRlMzQ5YTciLCJleHAiOjE2MDM0NTI5MjksImlhdCI6MTYwMzQ1MjYyOSwicmZwIjoiUC1VeUFfMkU3TzlmVWlBYTBlRnEzUT09IiwidGFyZ2V0X2xpbmtfdXJpIjoiL3JlcG9zaXRvcnkvZG9ja2VyL3plbmlrYS9hbHBpbmUtY2hyb21lP3JlZj1sb2dpbiJ9.7VDo9EiMbbvl2lw6jQzw0EMmwZt8pRBcelck4UZaPNI%26redirect_uri%3Dhttps%253A%252F%252Fhub.docker.com%252Fsso%252Fcallback%26response_type%3Dcode%26scope%3Dopenid%26state%3DeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiI0M2YxN2M1Zi05YmE0LTRmMTMtODUzZC05ZDAwNzRlMzQ5YTciLCJleHAiOjE2MDM0NTI5MjksImlhdCI6MTYwMzQ1MjYyOSwicmZwIjoiUC1VeUFfMkU3TzlmVWlBYTBlRnEzUT09IiwidGFyZ2V0X2xpbmtfdXJpIjoiL3JlcG9zaXRvcnkvZG9ja2VyL3plbmlrYS9hbHBpbmUtY2hyb21lP3JlZj1sb2dpbiJ9.7VDo9EiMbbvl2lw6jQzw0EMmwZt8pRBcelck4UZaPNIto) to sync the project and ship the images with confidence
 - 📌 Up-to-date latest Chromium and tags available to test different versions of Chromium
-- 🔐 Secure with the best way to use Chrome and Docker - See "3 ways to securely use Chrome Headless" section
-- 🌐 Ready for internationalisation use: support for asian characters - See "screenshot-asia.js" file
-- 💄 Ready for design use: support for WebGL - See "How to use with WebGL" section, support for emojis
+- 🔐 Secure with the best way to use Chrome and Docker - [See "3 ways to securely use Chrome Headless"](https://github.com/Zenika/alpine-chrome#3-ways-to-securely-use-chrome-headless-with-this-image) section
+- 🌐 Ready for internationalisation use: support for asian characters - [See "screenshot-asia.js" file](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/src/screenshot-asia.js)
+- 💄 Ready for design use: support for WebGL - [See "How to use with WebGL" section, support for emojis](https://github.com/Zenika/alpine-chrome#how-to-use-with-webgl)
 - 📄 Open Source with an Apache2 licence
-- 👥 Community-built with external contributors - See "✨ Contributors" section
-- 💚 Dev-friendly with examples using NodeJS, Puppeteer, docker-compose and also a test with a X11 display - See "Run examples" section
+- 👥 Community-built with external contributors - [See "✨ Contributors" section](https://github.com/Zenika/alpine-chrome#-contributors)
+- 💚 Dev-friendly with examples using NodeJS, Puppeteer, docker-compose and also a test with a X11 display - [See "Run examples" section](https://github.com/Zenika/alpine-chrome#run-examples)
 
 # 3 ways to securely use Chrome Headless with this image
 
