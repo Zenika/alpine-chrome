@@ -27,17 +27,17 @@ In the world of webdev, the ability to run quickly end-to-end tests are importan
 
 ## 💡 Crafting the perfect container
 
-- 📦 Tiniest Headless Chrome (Compressed size: 162.62MB)
+- 📦 Tiniest Headless Chrome (Compressed size: [162.62MB](https://github.com/Zenika/alpine-chrome#image-disk-size))
 - 🐳 Easy to use, ephemeral and reproducible Headless Chrome with Docker
 - 📝 Doc-friendly with examples for printing the DOM, generating an image with a mobile ratio or generating a PDF.
-- 👷‍♂️ Autobuild with the Docker Hub to sync the project and ship the images with confidence
+- 👷‍♂️ Autobuild with the [Docker Hub](https://hub.docker.com/repository/docker/zenika/alpine-chrome) to sync the project and ship the images with confidence
 - 📌 Up-to-date latest Chromium and tags available to test different versions of Chromium
-- 🔐 Secure with the best way to use Chrome and Docker - See "3 ways to securely use Chrome Headless" section
-- 🌐 Ready for internationalisation use: support for asian characters - See "screenshot-asia.js" file
-- 💄 Ready for design use: support for WebGL - See "How to use with WebGL" section, support for emojis
+- 🔐 Secure with the best way to use Chrome and Docker - [See "3 ways to securely use Chrome Headless"](https://github.com/Zenika/alpine-chrome#3-ways-to-securely-use-chrome-headless-with-this-image) section
+- 🌐 Ready for internationalisation use: support for asian characters - [See "screenshot-asia.js" file](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/src/screenshot-asia.js)
+- 💄 Ready for design use: support for WebGL, support for emojis- See ["How to use with WebGL" section](https://github.com/Zenika/alpine-chrome#how-to-use-with-webgl) and ["Emojis are not rendered properly" section](https://github.com/Zenika/alpine-chrome/issues/114)
 - 📄 Open Source with an Apache2 licence
-- 👥 Community-built with external contributors - See "✨ Contributors" section
-- 💚 Dev-friendly with examples using NodeJS, Puppeteer, docker-compose and also a test with a X11 display - See "Run examples" section
+- 👥 Community-built with external contributors - [See "✨ Contributors" section](https://github.com/Zenika/alpine-chrome#-contributors)
+- 💚 Dev-friendly with examples using NodeJS, Puppeteer, docker-compose and also a test with a X11 display - [See "Run examples" section](https://github.com/Zenika/alpine-chrome#run-examples)
 
 # 3 ways to securely use Chrome Headless with this image
 
