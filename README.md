@@ -21,11 +21,23 @@
 Chrome running in headless mode in a tiny Alpine image
 ****
 
-# Why this image
+# 🤔 Why use a Headless Chrome
 
-We often need a headless chrome.
-We created this image to get a fully headless chrome image.
-Be careful to the "--no-sandbox" flag from Chrome
+In the world of webdev, the ability to run quickly end-to-end tests are important. Popular technologies like Puppeteer enable developers to make fun things like testing, automating forms, crawling, generating screenshots, capturing timeline... And there is a secret: some of these features are directly available on Chrome! 🙌
+
+## 💡 Crafting the perfect container
+
+- 📦 Tiniest Headless Chrome (Compressed size: 162.62MB)
+- 🐳 Easy to use, ephemeral and reproducible Headless Chrome with Docker
+- 📝 Doc-friendly with examples for printing the DOM, generating an image with a mobile ratio or generating a PDF.
+- 👷‍♂️ Autobuild with the Docker Hub to sync the project and ship the images with confidence
+- 📌 Up-to-date latest Chromium and tags available to test different versions of Chromium
+- 🔐 Secure with the best way to use Chrome and Docker - See "3 ways to securely use Chrome Headless" section
+- 🌐 Ready for internationalisation use: support for asian characters - See "screenshot-asia.js" file
+- 💄 Ready for design use: support for WebGL - See "How to use with WebGL" section, support for emojis
+- 📄 Open Source with an Apache2 licence
+- 👥 Community-built with external contributors - See "✨ Contributors" section
+- 💚 Dev-friendly with examples using NodeJS, Puppeteer, docker-compose and also a test with a X11 display - See "Run examples" section
 
 # 3 ways to securely use Chrome Headless with this image
 
