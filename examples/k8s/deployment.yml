@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alpine-chrome-deployment
+  labels:
+    app: alpine-chrome
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: alpine-chrome
+  template:
+    metadata:
+      labels:
+        name: alpine-chrome
+    spec:
+      containers:
+      - args:
+        - --remote-debugging-address=0.0.0.0
+        - --remote-debugging-port=9222
+        - --headless
+        - --disable-gpu
+        image: zenika/alpine-chrome
+        livenessProbe:
+          httpGet:
+            path: /json
+            port: 9222
+          initialDelaySeconds: 10
+          timeoutSeconds: 10
+        name: zenika-alpine-chrome
+        readinessProbe:
+          httpGet:
+            path: /json
+            port: 9222
+          initialDelaySeconds: 10
+          timeoutSeconds: 10
+        resources:
+          limits:
+            cpu: "1"
+            memory: 2Gi
+          requests:
+            cpu: "1"
+            memory: 100Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            add:
+            - SYS_ADMIN
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp
+        - mountPath: /home/chrome
+          name: chrome
+      restartPolicy: Always
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+      volumes:
+      - emptyDir: {}
+        name: tmp
+      - emptyDir: {}
+        name: chrome
+status: {}
