@@ -353,6 +353,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "simonfrey",
+      "name": "Simon Frey",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/24354822?v=4",
+      "profile": "https://simon-frey.com",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
