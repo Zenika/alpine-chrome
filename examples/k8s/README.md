@@ -15,7 +15,7 @@ kubectl apply -f deployment.yml
 You can port forward from your cluster to your local machine with following command
 
 ```
- kubectl port-forward deployment/alpine-chrome-deployment 9222
+kubectl port-forward deployment/alpine-chrome-deployment 9222
 ```
 
 Then go to `localhost:9222` with your browser (must be a chrome base browser!)
