@@ -344,6 +344,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "mecm1993",
+      "name": "Manuel Cepeda",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/8043309?v=4",
+      "profile": "https://manuelcepeda.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
