@@ -237,8 +237,9 @@ docker container run --rm -it --entrypoint "" --user root zenika/alpine-chrome s
 
 Some examples are available on the `examples` [directory](examples):
 
-- [docker-compose](https://github.com/Zenika/alpine-chrome/blob/master/examples/docker-compose) to launch a chrome calling a nginx server in the same docker-compose
-- [x11](https://github.com/Zenika/alpine-chrome/blob/master/examples/x11) to experiment this image with a X11 server.
+- 🐳 [docker-compose](https://github.com/Zenika/alpine-chrome/blob/master/examples/docker-compose) to launch a chrome calling a nginx server in the same docker-compose
+- ☸️ [kubernetes](https://github.com/Zenika/alpine-chrome/tree/master/examples/k8s) to launch a pod with a headless chrome
+- 🖥 [x11](https://github.com/Zenika/alpine-chrome/blob/master/examples/x11) to experiment this image with a X11 server.
 
 # References
 
@@ -270,7 +271,7 @@ Chromium 86.0.4240.111
 
 ```
 docker image inspect zenika/alpine-chrome --format='{{.Size}}'
-407451915
+412848137
 ```
 
 # ✨ Contributors
