@@ -271,7 +271,7 @@ Chromium 86.0.4240.111
 
 ```
 docker image inspect zenika/alpine-chrome --format='{{.Size}}'
-412848137
+412889529
 ```
 
 # ✨ Contributors
