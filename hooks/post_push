@@ -1,9 +1,11 @@
 #!/bin/bash
 set -e
 
-CURRENT_VERSION_CHROMIUM=$(docker container run --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version)
+name="zenika/alpine-chrome"
+registry="gcr.io/zenika-hub"
+CURRENT_VERSION_CHROMIUM=$(docker container run --rm --entrypoint "" $name chromium-browser --version)
 tag=${CURRENT_VERSION_CHROMIUM:9:2}
-echo "🚀 $IMAGE_NAME 👉 $tag"
+echo "🚀 $name 👉 $tag"
 
 tagStart=$(expr index "$IMAGE_NAME" :)
 repoName=${IMAGE_NAME:0:tagStart-1}
@@ -12,15 +14,15 @@ docker push "${repoName}:${tag}"
 
 docker version
 echo "$GCLOUD_SERVICE_KEY" | base64 -d > 'key.json'
-cat key.json | docker login -u _json_key --password-stdin https://gcr.io/zenika-hub
+cat key.json | docker login -u _json_key --password-stdin "https://$registry"
 
 for published_tag in "latest" $tag; do
-    docker tag "$IMAGE_NAME" "gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
-    docker push "gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
+    docker tag "$IMAGE_NAME" "$registry/$name:$published_tag"
+    docker push "$registry/$name:$published_tag"
     for region in "us" "eu" "asia"; do
         #publish in the different regions
-        docker login -u _json_key -p "$(cat key.json)" https://$region.gcr.io/zenika-hub 
-        docker tag "gcr.io/zenika-hub/$IMAGE_NAME" "$region.gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
-        docker push "$region.gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
+        docker login -u _json_key -p "$(cat key.json)" "https://$region.$registry"
+        docker tag "$registry/$name" "$region.$registry/$name:$published_tag"
+        docker push "$region.$registry/$name:$published_tag"
     done
 done
