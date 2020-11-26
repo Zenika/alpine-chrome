@@ -3,7 +3,7 @@ set -e
 
 name="alpine-chrome"
 registry="gcr.io/zenika-hub"
-CURRENT_VERSION_CHROMIUM=$(docker container run --rm --entrypoint "" $name chromium-browser --version)
+CURRENT_VERSION_CHROMIUM=$(docker container run --rm --entrypoint "" zenika/$name chromium-browser --version)
 tag=${CURRENT_VERSION_CHROMIUM:9:2}
 echo "🚀 $name 👉 $tag"
 
