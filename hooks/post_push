@@ -11,6 +11,7 @@ docker tag "$IMAGE_NAME" "${repoName}:${tag}"
 docker push "${repoName}:${tag}"
 
 docker version
+echo "$GCLOUD_SERVICE_KEY" | base64 -d > 'key.json'
 cat key.json | docker login -u _json_key --password-stdin https://gcr.io/zenika-hub
 
 for published_tag in "latest" $tag; do
