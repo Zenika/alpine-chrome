@@ -3,26 +3,23 @@ set -e
 
 CURRENT_VERSION_CHROMIUM=$(docker container run --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version)
 tag=${CURRENT_VERSION_CHROMIUM:9:2}
-echo "$tag"
+echo "🚀 $IMAGE_NAME 👉 $tag"
 
 tagStart=$(expr index "$IMAGE_NAME" :)
 repoName=${IMAGE_NAME:0:tagStart-1}
 docker tag "$IMAGE_NAME" "${repoName}:${tag}"
 docker push "${repoName}:${tag}"
-#done
 
-echo "$GCLOUD_SERVICE_KEY" | base64 -d > 'key.json'
 docker version
-#cat key.json | docker login -u _json_key --password-stdin https://gcr.io/zenika-hub
-#Docker client is a old one: 17.06 and --password-stdin doesn't work.
+cat key.json | docker login -u _json_key --password-stdin https://gcr.io/zenika-hub
+
 for published_tag in "latest" $tag; do
-    docker login -u _json_key -p "$(cat key.json)" https://gcr.io/zenika-hub 
-    docker tag "$IMAGE_NAME" "gcr.io/zenika-hub/$IMAGE_NAME:${published_tag}"
-    docker push gcr.io/zenika-hub/"$IMAGE_NAME${published_tag}"
+    docker tag "$IMAGE_NAME" "gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
+    docker push "gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
     for region in "us" "eu" "asia"; do
         #publish in the different regions
         docker login -u _json_key -p "$(cat key.json)" https://$region.gcr.io/zenika-hub 
-        docker tag "gcr.io/zenika-hub/$IMAGE_NAME:${published_tag}" "$region.gcr.io/zenika-hub/$IMAGE_NAME:${published_tag}"
-        docker push "$region.gcr.io/zenika-hub/$IMAGE_NAME:${published_tag}"
+        docker tag "gcr.io/zenika-hub/$IMAGE_NAME" "$region.gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
+        docker push "$region.gcr.io/zenika-hub/$DOCKER_REPO:$published_tag"
     done
 done
