@@ -9,10 +9,10 @@
 Following the changes with the [Rate Limiting on Docker Hub](https://www.docker.com/increase-rate-limits). [Tweet here for more information in 🇫🇷](https://twitter.com/jlandure/status/1322474352554770432)
 - On the [Docker Hub](https://hub.docker.com/r/zenika/alpine-chrome) without any prefix: `zenika/alpine-chrome`
 - On Google Cloud - available in the closest region:
- - Global: `gcr.io/zenika-hub/alpine-chrome`
- - Europe: `eu.gcr.io/zenika-hub/alpine-chrome`
- - Asia: `asia.io/zenika-hub/alpine-chrome`
- - US: `us.io/zenika-hub/alpine-chrome`
+  - Global: `gcr.io/zenika-hub/alpine-chrome`
+  - Europe: `eu.gcr.io/zenika-hub/alpine-chrome`
+  - Asia: `asia.io/zenika-hub/alpine-chrome`
+  - US: `us.io/zenika-hub/alpine-chrome`
 
 # Supported tags and respective `Dockerfile` links
 
