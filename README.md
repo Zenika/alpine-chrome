@@ -11,8 +11,8 @@ Following the changes with the [Rate Limiting on Docker Hub](https://www.docker.
 - On Google Cloud - available in the closest region:
   - Global: `gcr.io/zenika-hub/alpine-chrome`
   - Europe: `eu.gcr.io/zenika-hub/alpine-chrome`
-  - Asia: `asia.io/zenika-hub/alpine-chrome`
-  - US: `us.io/zenika-hub/alpine-chrome`
+  - Asia: `asia.gcr.io/zenika-hub/alpine-chrome`
+  - US: `us.gcr.io/zenika-hub/alpine-chrome`
 
 # Supported tags and respective `Dockerfile` links
 
