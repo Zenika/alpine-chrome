@@ -1,7 +1,7 @@
 [![Docker Build Status](https://img.shields.io/docker/build/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Docker Pulls](https://img.shields.io/docker/pulls/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/) [![Layers](https://images.microbadger.com/badges/image/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Version](https://images.microbadger.com/badges/version/zenika/alpine-chrome.svg)](https://microbadger.com/images/zenika/alpine-chrome) [![Docker Stars](https://img.shields.io/docker/stars/zenika/alpine-chrome.svg)](https://hub.docker.com/r/zenika/alpine-chrome/)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-38-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-39-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 # Available registries
@@ -341,6 +341,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Antoineoili"><img src="https://avatars1.githubusercontent.com/u/50737365?v=4" width="100px;" alt=""/><br /><sub><b>Antoine Oili</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=Antoineoili" title="Documentation">📖</a></td>
     <td align="center"><a href="https://manuelcepeda.dev"><img src="https://avatars1.githubusercontent.com/u/8043309?v=4" width="100px;" alt=""/><br /><sub><b>Manuel Cepeda</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=mecm1993" title="Code">💻</a></td>
     <td align="center"><a href="https://simon-frey.com"><img src="https://avatars3.githubusercontent.com/u/24354822?v=4" width="100px;" alt=""/><br /><sub><b>Simon Frey</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=simonfrey" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.bleedbytes.in"><img src="https://avatars1.githubusercontent.com/u/20743451?v=4" width="100px;" alt=""/><br /><sub><b>Santhosh C</b></sub></a><br /><a href="https://github.com/Zenika/alpine-chrome/commits?author=santhosh-chinnasamy" title="Documentation">📖</a></td>
   </tr>
 </table>
 
