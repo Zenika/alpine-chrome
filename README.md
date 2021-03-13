@@ -16,15 +16,15 @@ Following the changes with the [Rate Limiting on Docker Hub](https://www.docker.
 
 # Supported tags and respective `Dockerfile` links
 
-- `latest`, `86` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
-- `with-node`, `86-with-node`, `86-with-node-12` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
-- `with-puppeteer`, `86-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
-- `with-playwright`, `86-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
-- `with-selenoid`, `86-with-selenoid` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-selenoid/Dockerfile)
-- `with-chromedriver`, `86-with-chromedriver` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-chromedriver/Dockerfile)
-- `85`, `84`, `83`, `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
-- `85-with-node`, `84-with-node`, `83-with-node`, `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
-- `85-with-puppeteer`,`84-with-puppeteer`, `83-with-puppeteer`, `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
+- `latest`, `89` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+- `with-node`, `89-with-node`, `89-with-node-14` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
+- `with-puppeteer`, `89-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
+- `with-playwright`, `89-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
+- `with-selenoid`, `89-with-selenoid` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-selenoid/Dockerfile)
+- `with-chromedriver`, `89-with-chromedriver` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-chromedriver/Dockerfile)
+- `86`, `85`, `84`, `83`, `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
+- `86-with-node`, `85-with-node`, `84-with-node`, `83-with-node`, `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
+- `86-with-puppeteer`, `85-with-puppeteer`,`84-with-puppeteer`, `83-with-puppeteer`, `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
 
 # alpine-chrome
 
