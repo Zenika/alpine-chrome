@@ -20,6 +20,6 @@ for tag in ${CHROMIUM_MAJOR_VERSION}; do
     repoName=${IMAGE_NAME:0:tagStart-1}
     docker tag $IMAGE_NAME ${repoName}:${tag}-with-chromedriver 
     docker push ${repoName}:${tag}-with-chromedriver 
-    docker tag $IMAGE_NAME ${repoName}:${tag}-with-chromedriver-${CURRENT_CHROMEDRIVER_VERSION}
-    docker push ${repoName}:${tag}-with-chromedriver-${CURRENT_CHROMEDRIVER_VERSION}
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-chromedriver-${CHROMEDRIVER_MAJOR_VERSION}
+    docker push ${repoName}:${tag}-with-chromedriver-${CHROMEDRIVER_MAJOR_VERSION}
 done
