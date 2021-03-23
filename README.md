@@ -182,7 +182,7 @@ These websites are tested with the following supported languages:
 
 # How to use with Playwright
 
-Like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.0&show=api-class-browser), we can do a lot things using ["Playwright"](https://playwright.dev/#version=v1.0.1&path=docs%2Fcore-concepts.md&q=browser) with our Chrome Headless.
+Like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v6.0.0&show=api-class-browser), we can do a lot things using ["Playwright"](https://playwright.dev/docs/core-concepts/#browser) with our Chrome Headless.
 
 Go to the `with-playwright` folder and launch the following command:
 
