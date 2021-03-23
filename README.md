@@ -160,7 +160,7 @@ With tool like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.
 
 With some code in NodeJS, we can improve and make some tests.
 
-See the ["with-puppeteer"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer) folder for more details.
+See the ["with-puppeteer"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer) folder for more details. We have to [follow the mapping of Chromium => Puppeteer described here](https://github.com/puppeteer/puppeteer/blob/main/versions.js).
 
 If you have a NodeJS/Puppeteer script in your `src` folder named `pdf.js`, you can launch it using the following command:
 
