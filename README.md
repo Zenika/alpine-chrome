@@ -267,14 +267,14 @@ Some examples are available on the `examples` [directory](examples):
 
 ```
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.12.1
+3.13.2
 ```
 
 ## Chrome version
 
 ```
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 86.0.4240.111
+Chromium 89.0.4389.72
 ```
 
 ## Image disk size
