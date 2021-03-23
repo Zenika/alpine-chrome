@@ -2,16 +2,24 @@
 set -e
 
 CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-chromedriver chromium-browser --version`
-echo ${CURRENT_VERSION_CHROMIUM:9:2}
-CURRENT_CHROMEDRIVER_VERSION=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-chromedriver chromedriver -v`
-echo ${CURRENT_CHROMEDRIVER_VERSION:13:2}
+CHROMIUM_MAJOR_VERSION=${CURRENT_VERSION_CHROMIUM:9:2}
+echo ${CHROMIUM_MAJOR_VERSION}
 
-for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
+CURRENT_CHROMEDRIVER_VERSION=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-chromedriver chromedriver -v`
+CHROMEDRIVER_MAJOR_VERSION=${CURRENT_CHROMEDRIVER_VERSION:13:2}
+echo ${CHROMEDRIVER_MAJOR_VERSION}
+
+if [ "${CHROMIUM_MAJOR_VERSION}" != "${CHROMEDRIVER_MAJOR_VERSION}" ]; then
+    echo "Skipping image pushing because of incompatible chromium (${CHROMIUM_MAJOR_VERSION}) and chromedriver (${CHROMEDRIVER_MAJOR_VERSION}) versions"
+    exit 0
+fi 
+
+for tag in ${CHROMIUM_MAJOR_VERSION}; do
     echo $tag        
     tagStart=$(expr index "$IMAGE_NAME" :)
     repoName=${IMAGE_NAME:0:tagStart-1}
     docker tag $IMAGE_NAME ${repoName}:${tag}-with-chromedriver 
     docker push ${repoName}:${tag}-with-chromedriver 
-    docker tag $IMAGE_NAME ${repoName}:${tag}-with-chromedriver-${CURRENT_CHROMEDRIVER_VERSION:13:2}
-    docker push ${repoName}:${tag}-with-chromedriver-${CURRENT_CHROMEDRIVER_VERSION:13:2}
+    docker tag $IMAGE_NAME ${repoName}:${tag}-with-chromedriver-${CHROMEDRIVER_MAJOR_VERSION}
+    docker push ${repoName}:${tag}-with-chromedriver-${CHROMEDRIVER_MAJOR_VERSION}
 done
