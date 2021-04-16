@@ -37,7 +37,7 @@ In the world of webdev, the ability to run quickly end-to-end tests are importan
 
 ## 💡 Crafting the perfect container
 
-- 📦 Tiniest Headless Chrome (Compressed size: [162.62MB](https://github.com/Zenika/alpine-chrome#image-disk-size))
+- 📦 Tiniest Headless Chrome (Compressed size: [423 MB](https://github.com/Zenika/alpine-chrome#image-disk-size))
 - 🐳 Easy to use, ephemeral and reproducible Headless Chrome with Docker
 - 📝 Doc-friendly with examples for printing the DOM, generating an image with a mobile ratio or generating a PDF.
 - 👷‍♂️ Autobuild with the [Docker Hub](https://hub.docker.com/repository/docker/zenika/alpine-chrome) to sync the project and ship the images with confidence
@@ -281,7 +281,7 @@ Chromium 89.0.4389.72
 
 ```
 docker image inspect zenika/alpine-chrome --format='{{.Size}}'
-412889529
+422582394 # 423 MB
 ```
 
 # ✨ Contributors
