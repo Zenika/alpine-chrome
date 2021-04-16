@@ -180,6 +180,20 @@ These websites are tested with the following supported languages:
 - Japanese (with `https://www.yahoo.co.jp/`)
 - Korean (with `https://www.naver.com/`)
 
+# How to use with Puppeteer to test a Chrome Extension
+[According to puppeteer official doc](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#working-with-chrome-extensions) you can not test a Chrome Extension in headleass mode. You need a display available, that's where Xvfb comes in.
+
+See the ["with-puppeteer-xvfb"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer-xvfb) folder for more details. We have to [follow the mapping of Chromium => Puppeteer described here](https://github.com/puppeteer/puppeteer/blob/main/versions.js).
+
+Assuming you have a NodeJS/Puppeteer script in your `src` folder named `extension.js`, and the unpacked extension in the `chrome-extension` folder, you can launch it using the following command:
+
+```
+docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer-xvfb node src/extension.js
+```
+
+The extension provided
+
+
 # How to use with Playwright
 
 Like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v6.0.0&show=api-class-browser), we can do a lot things using ["Playwright"](https://playwright.dev/docs/core-concepts/#browser) with our Chrome Headless.
