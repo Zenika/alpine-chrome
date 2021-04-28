@@ -9,6 +9,6 @@ USER chrome
 
 ENV DISPLAY :99
 
-COPY docker-entrypoint.sh ./
+COPY --chown=chrome . ./
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"] 
 CMD ["node", "src/extension.js"]
