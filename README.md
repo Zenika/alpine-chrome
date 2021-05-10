@@ -191,8 +191,7 @@ Assuming you have a NodeJS/Puppeteer script in your `src` folder named `extensio
 docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer-xvfb node src/extension.js
 ```
 
-The extension provided
-
+The extension provided will change the page background in red for every website visited. This demo will load the extension and take a screenshot of the icanhazip.com website.
 
 # How to use with Playwright
 
