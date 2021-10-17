@@ -16,13 +16,13 @@ Following the changes with the [Rate Limiting on Docker Hub](https://www.docker.
 
 # Supported tags and respective `Dockerfile` links
 
-- `latest`, `89` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
+- `latest`, `93` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/Dockerfile)
 - `with-node`, `89-with-node`, `89-with-node-14` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-node/Dockerfile)
 - `with-puppeteer`, `89-with-puppeteer` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/Dockerfile)
 - `with-playwright`, `89-with-playwright` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-playwright/Dockerfile)
 - `with-selenoid`, `89-with-selenoid` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-selenoid/Dockerfile)
 - `with-chromedriver`, `89-with-chromedriver` [(Dockerfile)](https://github.com/Zenika/alpine-chrome/blob/master/with-chromedriver/Dockerfile)
-- `86`, `85`, `84`, `83`, `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
+- `89`, `86`, `85`, `84`, `83`, `81`, `80`, `77`, `76`, `73`, `72`, `71`, `68`, `64`
 - `86-with-node`, `85-with-node`, `84-with-node`, `83-with-node`, `81-with-node`, `80-with-node`, `77-with-node`, `76-with-node`
 - `86-with-puppeteer`, `85-with-puppeteer`,`84-with-puppeteer`, `83-with-puppeteer`, `81-with-puppeteer`, `80-with-puppeteer`, `77-with-puppeteer`, `76-with-puppeteer`
 
@@ -274,7 +274,7 @@ docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpi
 
 ```
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 89.0.4389.72
+Chromium 93.0.4577.82
 ```
 
 ## Image disk size
