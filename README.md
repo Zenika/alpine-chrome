@@ -89,7 +89,7 @@ Launch the container using:
 
 ## Default entrypoint
 
-The default entrypoint does the following command: `chromium-browser --headless --disable-gpu --disable-software-rasterizer --disable-dev-shm-usage`
+The default entrypoint runs: `chromium-browser` with the `CHROMIUM_FLAGS` set in the `Dockerfile`.
 
 You can get full control by overriding the entrypoint using: `docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser ...`
 

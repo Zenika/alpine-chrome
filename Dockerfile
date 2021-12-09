@@ -14,19 +14,20 @@ LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.version="latest"
 
 # Installs latest Chromium package.
+# libstdc, harfbuzz, nss, freetype, are deps in chromium wqy-zenhei does not exist, not sure what this does
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories \
     && echo "http://dl-cdn.alpinelinux.org/alpine/v3.12/main" >> /etc/apk/repositories \
     && apk upgrade -U -a \
     && apk add \
-    libstdc++ \
     chromium \
+    ttf-freefont \
+    font-noto-emoji \
+    libstdc++ \
     harfbuzz \
     nss \
     freetype \
-    ttf-freefont \
-    font-noto-emoji \
     wqy-zenhei \
     && rm -rf /var/cache/* \
     && mkdir /var/cache/apk
@@ -41,8 +42,9 @@ RUN mkdir -p /usr/src/app \
 USER chrome
 WORKDIR /usr/src/app
 
-ENV CHROME_BIN=/usr/bin/chromium-browser \
+ENV CHROME_BIN=/usr/bin/chromium-browser                                            \
+    CHROMIUM_FLAGS=--headless --disable-dev-shm-usage --disable-software-rasterizer \
     CHROME_PATH=/usr/lib/chromium/
 
 # Autorun chrome headless
-ENTRYPOINT ["chromium-browser", "--headless", "--use-gl=swiftshader", "--disable-software-rasterizer", "--disable-dev-shm-usage"]
+ENTRYPOINT ["chromium-browser"]
