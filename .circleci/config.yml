@@ -7,34 +7,50 @@ workflows:
   build-docker-image-only:
     jobs:
       - docker/publish:
+          name: zenika/alpine-chrome:latest
           image: zenika/alpine-chrome
           tag: latest
+          path: .
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-chromedriver 
           image: zenika/alpine-chrome
           tag: with-chromedriver
+          path: with-chromedriver 
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-deno 
           image: zenika/alpine-chrome
           tag: with-deno
+          path: with-deno 
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-node 
           image: zenika/alpine-chrome
           tag: with-node
+          path: with-node 
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-puppeteer-xvfb 
           image: zenika/alpine-chrome
           tag: with-puppeteer-xvfb
+          path: with-puppeteer-xvfb 
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-puppeteer 
           image: zenika/alpine-chrome
           tag: with-puppeteer
+          path: with-puppeteer 
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-playwright 
           image: zenika/alpine-chrome
           tag: with-playwright
+          path: with-playwright 
           deploy: false
       - docker/publish:
+          name: zenika/alpine-chrome:with-solenoid 
           image: zenika/alpine-chrome
           tag: with-solenoid
+          path: with-solenoid 
           deploy: false
