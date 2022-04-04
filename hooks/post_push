@@ -4,7 +4,12 @@ set -e
 name="alpine-chrome"
 registry="gcr.io/zenika-hub"
 CURRENT_VERSION_CHROMIUM=$(docker container run --rm --entrypoint "" zenika/$name chromium-browser --version)
-tag=${CURRENT_VERSION_CHROMIUM:9:2}
+CHROMIUM_VERSION_REGEXP='Chromium ([0-9]+)\.'
+if [[ $CURRENT_VERSION_CHROMIUM =~ $CHROMIUM_VERSION_REGEXP ]]; 
+then echo "ℹ Succesfully extracted Chromium major version of ${BASH_REMATCH[1]} from $CURRENT_VERSION_CHROMIUM"; 
+else echo "❌ Cannot extract Chromium major version from $CURRENT_VERSION_CHROMIUM"; 
+fi
+tag=${BASH_REMATCH[1]}
 echo "🚀 $name 👉 $tag"
 
 tagStart=$(expr index "$IMAGE_NAME" :)
