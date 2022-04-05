@@ -2,11 +2,17 @@
 set -e
 
 CURRENT_VERSION_CHROMIUM=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-node chromium-browser --version`
-echo ${CURRENT_VERSION_CHROMIUM:9:2}
+CHROMIUM_VERSION_REGEXP='Chromium ([0-9]+)\.'
+if [[ $CURRENT_VERSION_CHROMIUM =~ $CHROMIUM_VERSION_REGEXP ]]; 
+then echo "ℹ Succesfully extracted Chromium major version of ${BASH_REMATCH[1]} from $CURRENT_VERSION_CHROMIUM"; 
+else echo "❌ Cannot extract Chromium major version from $CURRENT_VERSION_CHROMIUM"; 
+fi
+CHROMIUM_MAJOR_VERSION=${BASH_REMATCH[1]}
+echo $CHROMIUM_MAJOR_VERSION
 CURRENT_NODE_VERSION=`docker container run --rm --entrypoint "" zenika/alpine-chrome:with-node node -v`
 echo ${CURRENT_NODE_VERSION:1:2}
 
-for tag in ${CURRENT_VERSION_CHROMIUM:9:2}; do
+for tag in $CHROMIUM_MAJOR_VERSION; do
     echo $tag        
     tagStart=$(expr index "$IMAGE_NAME" :)
     repoName=${IMAGE_NAME:0:tagStart-1}
