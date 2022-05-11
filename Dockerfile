@@ -3,15 +3,14 @@ FROM alpine:latest
 ARG BUILD_DATE
 ARG VCS_REF
 
-LABEL org.label-schema.build-date=$BUILD_DATE \
-    org.label-schema.description="Chrome running in headless mode in a tiny Alpine image" \
-    org.label-schema.name="alpine-chrome" \
-    org.label-schema.schema-version="1.0.0-rc1" \
-    org.label-schema.usage="https://github.com/Zenika/alpine-chrome/blob/master/README.md" \
-    org.label-schema.vcs-url="https://github.com/Zenika/alpine-chrome" \
-    org.label-schema.vcs-ref=$VCS_REF \
-    org.label-schema.vendor="Zenika" \
-    org.label-schema.version="latest"
+LABEL org.opencontainers.image.created=$BUILD_DATE \
+    org.opencontainers.image.description="Chrome running in headless mode in a tiny Alpine image" \
+    org.opencontainers.image.title="alpine-chrome" \
+    org.opencontainers.image.documentation="https://github.com/Zenika/alpine-chrome/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/Zenika/alpine-chrome" \
+    org.opencontainers.image.revision=$VCS_REF \
+    org.opencontainers.image.vendor="Zenika" \
+    org.opencontainers.image.version="latest"
 
 # Installs latest Chromium package.
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main" > /etc/apk/repositories \
