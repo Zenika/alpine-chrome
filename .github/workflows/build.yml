@@ -65,6 +65,25 @@ jobs:
         run: |
           docker container run --rm --entrypoint '' ${IMAGE_NAME} cat /etc/alpine-release
           docker container run --rm --entrypoint '' ${IMAGE_NAME} chromium-browser --version
+          mkdir src/ && chmod a+rwX src/
+          if [[ '${{ matrix.context.folder }}' == 'with-node' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} node --version
+          elif [[ '${{ matrix.context.folder }}' == 'with-deno' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} deno --version
+          elif [[ '${{ matrix.context.folder }}' == 'with-chromedriver' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} chromedriver --version
+          elif [[ '${{ matrix.context.folder }}' == 'with-playwright' ]]; then
+            docker container run --rm --volume $PWD:/work --workdir /work ${IMAGE_NAME}
+            [ -f src/example-chromium.png ]
+          elif [[ '${{ matrix.context.folder }}' == 'with-puppeteer' ]]; then
+            docker container run --rm --volume $PWD:/work --workdir /work --cap-add=SYS_ADMIN ${IMAGE_NAME}
+            [ -f src/devfest.pdf ]
+          elif [[ '${{ matrix.context.folder }}' == 'with-puppeteer-xvfb' ]]; then
+            docker container run --rm --volume $PWD:/work --workdir /work --cap-add=SYS_ADMIN ${IMAGE_NAME}
+            [ -f src/screenshot.png ]
+          elif [[ '${{ matrix.context.folder }}' == 'with-selenoid' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} selenoid -version
+          fi
 
       - name: Compute versioned tag
         if: ${{ github.event_name == 'push' }}

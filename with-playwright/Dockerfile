@@ -7,4 +7,4 @@ COPY --chown=chrome package.json package-lock.json ./
 RUN npm install
 COPY --chown=chrome . ./
 ENTRYPOINT ["tini", "--"]
-CMD ["node", "src/useragent"]
+CMD ["node", "/usr/src/app/src/useragent"]
