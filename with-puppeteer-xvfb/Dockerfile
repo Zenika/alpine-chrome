@@ -1,10 +1,7 @@
 FROM zenika/alpine-chrome:with-puppeteer
 
 USER 0
-RUN apk upgrade -U -a \
-    && apk add xvfb\
-    && rm -rf /var/cache/* \
-    && mkdir /var/cache/apk
+RUN apk add --no-cache xvfb
 USER chrome
 
 ENV DISPLAY :99
