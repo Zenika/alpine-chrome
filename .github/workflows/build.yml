@@ -8,7 +8,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_REPOSITORY: zenika/alpine-chrome
+  IMAGE_REPOSITORY: alpine-chrome
   IMAGE_TAG: latest
 
 jobs:
@@ -172,8 +172,8 @@ jobs:
             BUILD_DATE=${{ steps.date.outputs.date }}
             VCS_REF=${{ github.sha }}
           tags: |
-            ${{ env.IMAGE_NAME }}
-            ${{ env.IMAGE_VERSIONED_NAME }}
+            zenika/${{ env.IMAGE_NAME }}
+            zenika/${{ env.IMAGE_VERSIONED_NAME }}
             gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
             gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
             us.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
