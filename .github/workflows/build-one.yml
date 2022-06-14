@@ -24,7 +24,6 @@ on:
 
 env:
   IMAGE_REPOSITORY: alpine-chrome
-  IMAGE_TAG: latest
 
 jobs:
   docker:
@@ -41,10 +40,15 @@ jobs:
         with:
           driver: docker
 
-      - name: Get current date
-        id: date
-        run: |
-          echo "::set-output name=date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.IMAGE_REPOSITORY }}
+          tags: type=raw,value=${{ inputs.tag }}
+          labels: |
+            org.opencontainers.image.documentation=https://github.com/Zenika/alpine-chrome/blob/master/README
+            org.opencontainers.image.vendor=Zenika
 
       - name: Download parent image artifact
         if: ${{ inputs.parent != '' }}
@@ -62,9 +66,7 @@ jobs:
         with:
           context: ${{ inputs.folder }}
           load: true
-          build-args: |
-            BUILD_DATE=${{ steps.date.outputs.date }}
-            VCS_REF=${{ github.sha }}
+          labels: ${{ steps.meta.outputs.labels }}
           tags: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
 
       - name: Test
@@ -164,9 +166,7 @@ jobs:
         with:
           context: ${{ inputs.folder }}
           platforms: linux/amd64,linux/arm64
-          build-args: |
-            BUILD_DATE=${{ steps.date.outputs.date }}
-            VCS_REF=${{ github.sha }}
+          labels: ${{ steps.meta.outputs.labels }}
           tags: |
             zenika/${{ env.IMAGE_NAME }}
             zenika/${{ env.IMAGE_VERSIONED_NAME }}
@@ -179,3 +179,5 @@ jobs:
             asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_NAME }}
             asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
           push: true
+          cache-from: type=gha
+          cache-to: type=gha
