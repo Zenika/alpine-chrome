@@ -1,0 +1,168 @@
+---
+
+name: build-one
+on:
+  workflow_call:
+    inputs:
+      folder:
+        required: true
+        type: string
+      tag:
+        required: true
+        type: string
+
+env:
+  IMAGE_REPOSITORY: alpine-chrome
+  IMAGE_TAG: latest
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Get current date
+        id: date
+        run: |
+          echo "::set-output name=date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v3
+        with:
+          context: ${{ inputs.folder }}
+          load: true
+          build-args: |
+            BUILD_DATE=${{ steps.date.outputs.date }}
+            VCS_REF=${{ github.sha }}
+          tags: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+
+      - name: Test
+        env:
+          IMAGE_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+        run: |
+          docker container run --rm --entrypoint '' ${IMAGE_NAME} cat /etc/alpine-release
+          docker container run --rm --entrypoint '' ${IMAGE_NAME} chromium-browser --version
+          mkdir src/ && chmod a+rwX src/
+          if [[ '${{ matrix.context.folder }}' == 'with-node' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} node --version
+          elif [[ '${{ matrix.context.folder }}' == 'with-deno' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} deno --version
+          elif [[ '${{ matrix.context.folder }}' == 'with-chromedriver' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} chromedriver --version
+          elif [[ '${{ matrix.context.folder }}' == 'with-playwright' ]]; then
+            docker container run --rm --volume $PWD:/work --workdir /work ${IMAGE_NAME}
+            [ -f src/example-chromium.png ]
+          elif [[ '${{ matrix.context.folder }}' == 'with-puppeteer' ]]; then
+            docker container run --rm --volume $PWD:/work --workdir /work --cap-add=SYS_ADMIN ${IMAGE_NAME}
+            [ -f src/devfest.pdf ]
+          elif [[ '${{ matrix.context.folder }}' == 'with-puppeteer-xvfb' ]]; then
+            docker container run --rm --volume $PWD:/work --workdir /work --cap-add=SYS_ADMIN ${IMAGE_NAME}
+            [ -f src/screenshot.png ]
+          elif [[ '${{ matrix.context.folder }}' == 'with-selenoid' ]]; then
+            docker container run --rm --entrypoint '' ${IMAGE_NAME} selenoid -version
+          fi
+
+      - name: Compute versioned tag
+        id: tag
+        env:
+          IMAGE_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          CHROMIUM_VERSION_REGEXP: 'Chromium ([0-9]+)\.'
+          CHROMEDRIVER_VERSION_REGEXP: 'ChromeDriver ([0-9]+)\.'
+        run: |
+          CURRENT_CHROMIUM_VERSION=$(docker container run --rm --entrypoint '' ${IMAGE_NAME} chromium-browser --version)
+          if [[ ${CURRENT_CHROMIUM_VERSION} =~ ${CHROMIUM_VERSION_REGEXP} ]]; then
+            echo "ℹ Successfully extracted Chromium major version of ${BASH_REMATCH[1]} from '${CURRENT_CHROMIUM_VERSION}'"
+          else
+            echo "❌ Cannot extract Chromium major version from '${CURRENT_CHROMIUM_VERSION}'" >&2
+            exit 1
+          fi
+          CHROMIUM_VERSION=${BASH_REMATCH[1]}
+          TAG=${CHROMIUM_VERSION}
+          if [[ '${{ inputs.folder }}' != '.' ]]; then
+            TAG=${TAG}-${{ inputs.tag }}
+          fi
+          if [[ '${{ inputs.folder }}' == 'with-chromedriver' ]]; then
+            CURRENT_CHROMEDRIVER_VERSION=$(docker container run --rm --entrypoint "" ${IMAGE_NAME} chromedriver --version)
+            if [[ ${CURRENT_CHROMEDRIVER_VERSION} =~ ${CHROMEDRIVER_VERSION_REGEXP} ]]; then
+              CHROMEDRIVER_MAJOR_VERSION=${BASH_REMATCH[1]}
+            fi
+            if [ "${CHROMIUM_VERSION}" != "${CHROMEDRIVER_MAJOR_VERSION}" ]; then
+                echo "Skipping image pushing because of incompatible chromium (${CHROMIUM_VERSION}) and chromedriver (${CHROMEDRIVER_MAJOR_VERSION}) versions" >&2
+                exit 1
+            fi
+          elif [[ '${{ inputs.folder }}' == 'with-selenoid' ]]; then
+            CURRENT_SELENOID_VERSION=$(docker container run --rm --entrypoint "" ${IMAGE_NAME} selenoid -version)
+            TAG=${TAG}-${CURRENT_SELENOID_VERSION:14:4}
+          fi
+          echo "::set-output name=value::${TAG}"
+
+      - name: Login to DockerHub
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Login to GCR
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: docker/login-action@v2
+        with:
+          registry: gcr.io
+          username: _json_key
+          password: ${{ secrets.GCR_JSON_KEY }}
+
+      - name: Login to US GCR
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: docker/login-action@v2
+        with:
+          registry: us.gcr.io
+          username: _json_key
+          password: ${{ secrets.GCR_JSON_KEY }}
+
+      - name: Login to EU GCR
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: docker/login-action@v2
+        with:
+          registry: eu.gcr.io
+          username: _json_key
+          password: ${{ secrets.GCR_JSON_KEY }}
+
+      - name: Login to Asia GCR
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        uses: docker/login-action@v2
+        with:
+          registry: asia.gcr.io
+          username: _json_key
+          password: ${{ secrets.GCR_JSON_KEY }}
+
+      - name: Build and push
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        env:
+          IMAGE_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          IMAGE_VERSIONED_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ steps.tag.outputs.value }}
+        uses: docker/build-push-action@v3
+        with:
+          context: ${{ inputs.folder }}
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            BUILD_DATE=${{ steps.date.outputs.date }}
+            VCS_REF=${{ github.sha }}
+          tags: |
+            zenika/${{ env.IMAGE_NAME }}
+            zenika/${{ env.IMAGE_VERSIONED_NAME }}
+            gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
+            gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
+            us.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
+            us.gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
+            eu.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
+            eu.gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
+            asia.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
+            asia.gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
+          push: true
