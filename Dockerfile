@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.16
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -15,15 +15,12 @@ LABEL org.opencontainers.image.created=$BUILD_DATE \
 # Installs latest Chromium package.
 RUN apk upgrade --no-cache --available \
     && apk add --no-cache \
-      --repository=https://dl-cdn.alpinelinux.org/alpine/edge/main \
-      --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
       chromium \
-    && apk add --no-cache \
       ttf-freefont \
       font-noto-emoji \
     && apk add --no-cache \
       --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
-      wqy-zenhei
+      font-wqy-zenhei
 
 COPY local.conf /etc/fonts/local.conf
 
