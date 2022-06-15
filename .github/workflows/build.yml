@@ -21,6 +21,7 @@ jobs:
     with:
       folder: with-node
       tag: with-node
+      parent: latest
 
   build-with-deno:
     needs:
@@ -29,6 +30,7 @@ jobs:
     with:
       folder: with-deno
       tag: with-deno
+      parent: latest
 
   build-with-chromedriver:
     needs:
@@ -37,6 +39,7 @@ jobs:
     with:
       folder: with-chromedriver
       tag: with-chromedriver
+      parent: latest
 
   build-with-playwright:
     needs:
@@ -45,6 +48,7 @@ jobs:
     with:
       folder: with-playwright
       tag: with-playwright
+      parent: with-node
 
   build-with-puppeteer:
     needs:
@@ -53,6 +57,7 @@ jobs:
     with:
       folder: with-puppeteer
       tag: with-puppeteer
+      parent: with-node
 
   build-with-puppeteer-xvfb:
     needs:
@@ -61,6 +66,7 @@ jobs:
     with:
       folder: with-puppeteer-xvfb
       tag: with-puppeteer-xvfb
+      parent: with-puppeteer
 
   build-with-selenoid:
     needs:
@@ -69,3 +75,4 @@ jobs:
     with:
       folder: with-selenoid
       tag: with-selenoid
+      parent: with-chromedriver

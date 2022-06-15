@@ -10,6 +10,10 @@ on:
       tag:
         required: true
         type: string
+      parent:
+        required: false
+        type: string
+        default: ''
 
 env:
   IMAGE_REPOSITORY: alpine-chrome
@@ -25,15 +29,28 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
-      - name: Set up Docker Buildx
+      - name: Set up Docker Buildx with docker driver
         uses: docker/setup-buildx-action@v2
+        with:
+          driver: docker
 
       - name: Get current date
         id: date
         run: |
           echo "::set-output name=date::$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 
-      - name: Build and export to Docker
+      - name: Download parent image artifact
+        if: ${{ inputs.parent != '' }}
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ env.IMAGE_REPOSITORY }}-${{ inputs.parent }}
+
+      - name: Load parent image artifact
+        if: ${{ inputs.parent != '' }}
+        run: |
+          docker image load --input ${{ env.IMAGE_REPOSITORY }}-${{ inputs.parent }}.tar.gz
+
+      - name: Build Docker image
         uses: docker/build-push-action@v3
         with:
           context: ${{ inputs.folder }}
@@ -41,18 +58,29 @@ jobs:
           build-args: |
             BUILD_DATE=${{ steps.date.outputs.date }}
             VCS_REF=${{ github.sha }}
-          tags: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          tags: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
 
       - name: Test
         env:
-          IMAGE_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          IMAGE_NAME: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
         run: |
           ${{ inputs.folder }}/test.sh
+
+      - name: Export image artifact
+        run: |
+          docker image save zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }} | gzip > ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}.tar.gz
+
+      - name: Upload image artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}
+          path: ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}.tar.gz
+          retention-days: 1
 
       - name: Compute versioned tag
         id: tag
         env:
-          IMAGE_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          IMAGE_NAME: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
           CHROMIUM_VERSION_REGEXP: 'Chromium ([0-9]+)\.'
           CHROMEDRIVER_VERSION_REGEXP: 'ChromeDriver ([0-9]+)\.'
         run: |
@@ -121,6 +149,12 @@ jobs:
           registry: asia.gcr.io
           username: _json_key
           password: ${{ secrets.GCR_JSON_KEY }}
+
+      - name: Set up Docker Buildx with docker-container driver
+        if: ${{ github.event_name == 'push' }}
+        uses: docker/setup-buildx-action@v2
+        with:
+          driver: docker-container
 
       - name: Build and push
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
