@@ -125,40 +125,32 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to GCR
+      - name: Login to US GAR
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: docker/login-action@v2
         with:
-          registry: gcr.io
-          username: _json_key
-          password: ${{ secrets.GCR_JSON_KEY }}
+          registry: us-docker.pkg.dev
+          username: _json_key_base64
+          password: ${{ secrets.GAR_JSON_KEY }}
 
-      - name: Login to US GCR
+      - name: Login to Europe GAR
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: docker/login-action@v2
         with:
-          registry: us.gcr.io
-          username: _json_key
-          password: ${{ secrets.GCR_JSON_KEY }}
+          registry: europe-docker.pkg.dev
+          username: _json_key_base64
+          password: ${{ secrets.GAR_JSON_KEY }}
 
-      - name: Login to EU GCR
+      - name: Login to Asia GAR
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: docker/login-action@v2
         with:
-          registry: eu.gcr.io
-          username: _json_key
-          password: ${{ secrets.GCR_JSON_KEY }}
-
-      - name: Login to Asia GCR
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
-        with:
-          registry: asia.gcr.io
-          username: _json_key
-          password: ${{ secrets.GCR_JSON_KEY }}
+          registry: asia-docker.pkg.dev
+          username: _json_key_base64
+          password: ${{ secrets.GAR_JSON_KEY }}
 
       - name: Set up Docker Buildx with docker-container driver
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: docker/setup-buildx-action@v2
         with:
           driver: docker-container
@@ -178,12 +170,12 @@ jobs:
           tags: |
             zenika/${{ env.IMAGE_NAME }}
             zenika/${{ env.IMAGE_VERSIONED_NAME }}
-            gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
-            gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
-            us.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
-            us.gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
-            eu.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
-            eu.gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
-            asia.gcr.io/zenika-hub/${{ env.IMAGE_NAME }}
-            asia.gcr.io/zenika-hub/${{ env.IMAGE_VERSIONED_NAME }}
+            us-docker.pkg.dev/zenika-hub/gcr.io/${{ env.IMAGE_NAME }}
+            us-docker.pkg.dev/zenika-hub/gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+            us-docker.pkg.dev/zenika-hub/us.gcr.io/${{ env.IMAGE_NAME }}
+            us-docker.pkg.dev/zenika-hub/us.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+            europe-docker.pkg.dev/zenika-hub/eu.gcr.io/${{ env.IMAGE_NAME }}
+            europe-docker.pkg.dev/zenika-hub/eu.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+            asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_NAME }}
+            asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
           push: true
