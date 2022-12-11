@@ -118,7 +118,7 @@ jobs:
             CURRENT_SELENOID_VERSION=$(docker container run --rm --entrypoint "" ${IMAGE_NAME} selenoid -version)
             TAG=${TAG}-${CURRENT_SELENOID_VERSION:14:4}
           fi
-          echo "::set-output name=value::${TAG}"
+          echo "value=${TAG}" >> $GITHUB_OUTPUT
 
       - name: Login to DockerHub
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
