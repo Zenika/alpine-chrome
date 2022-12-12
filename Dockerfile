@@ -1,17 +1,5 @@
 FROM alpine:3.16
 
-ARG BUILD_DATE
-ARG VCS_REF
-
-LABEL org.opencontainers.image.created=$BUILD_DATE \
-    org.opencontainers.image.description="Chrome running in headless mode in a tiny Alpine image" \
-    org.opencontainers.image.title="alpine-chrome" \
-    org.opencontainers.image.documentation="https://github.com/Zenika/alpine-chrome/blob/master/README.md" \
-    org.opencontainers.image.source="https://github.com/Zenika/alpine-chrome" \
-    org.opencontainers.image.revision=$VCS_REF \
-    org.opencontainers.image.vendor="Zenika" \
-    org.opencontainers.image.version="latest"
-
 # Installs latest Chromium package.
 RUN apk upgrade --no-cache --available \
     && apk add --no-cache \
