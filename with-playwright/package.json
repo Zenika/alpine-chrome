@@ -13,6 +13,6 @@
   "author": "jlandure",
   "license": "MIT",
   "dependencies": {
-    "playwright-chromium": "~1.19.0"
+    "playwright-chromium": "~1.28.1"
   }
 }
