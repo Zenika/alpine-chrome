@@ -3,7 +3,7 @@ FROM alpine:3.17
 # Installs latest Chromium package.
 RUN apk upgrade --no-cache --available \
     && apk add --no-cache \
-      chromium \
+      chromium-swiftshader \
       ttf-freefont \
       font-noto-emoji \
     && apk add --no-cache \
@@ -24,5 +24,5 @@ ENV CHROME_BIN=/usr/bin/chromium-browser \
     CHROME_PATH=/usr/lib/chromium/
 
 # Autorun chrome headless
-ENV CHROMIUM_FLAGS="--use-gl=swiftshader --disable-software-rasterizer --disable-dev-shm-usage"
+ENV CHROMIUM_FLAGS="--disable-software-rasterizer --disable-dev-shm-usage"
 ENTRYPOINT ["chromium-browser", "--headless"]
