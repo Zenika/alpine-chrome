@@ -213,17 +213,9 @@ By default, this image works with WebGL.
 
 If you want to disable it, make sure to add `--disable-gpu` when launching Chromium.
 
-The `with-webgl` tag still exists but is deprecated. It will be removed before end of August 2020.
-
 `docker container run -it --rm --cap-add=SYS_ADMIN -v $(pwd):/usr/src/app zenika/alpine-chrome --screenshot --hide-scrollbars https://webglfundamentals.org/webgl/webgl-fundamentals.html`
 
 `docker container run -it --rm --cap-add=SYS_ADMIN -v $(pwd):/usr/src/app zenika/alpine-chrome --screenshot --hide-scrollbars https://browserleaks.com/webgl`
-
-Links:
-
-- https://github.com/adieuadieu/serverless-chrome/issues/108
-- https://github.com/DevExpress/testcafe/issues/2116
-- 'use-gl' values [here](https://cs.chromium.org/chromium/src/ui/gl/gl_switches.cc?type=cs&q=kUseGL&sq=package:chromium&g=0&l=69)
 
 # How to use with Chromedriver
 
