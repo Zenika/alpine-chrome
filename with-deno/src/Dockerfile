@@ -1,4 +1,4 @@
-FROM zenika/alpine-chrome:with-deno
+FROM zigarn/alpine-chrome:with-deno
 
 RUN git clone https://github.com/puppeteer/puppeteer/blob/master/src/ puppeteer
 

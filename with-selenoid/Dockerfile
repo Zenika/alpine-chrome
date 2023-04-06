@@ -1,5 +1,5 @@
 FROM aerokube/selenoid:latest-release as selenoid
-FROM zenika/alpine-chrome:with-chromedriver
+FROM zigarn/alpine-chrome:with-chromedriver
 
 USER root
 RUN apk add --no-cache ca-certificates tzdata mailcap

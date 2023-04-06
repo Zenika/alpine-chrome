@@ -1,4 +1,4 @@
-FROM zenika/alpine-chrome:with-puppeteer
+FROM zigarn/alpine-chrome:with-puppeteer
 
 USER 0
 RUN apk add --no-cache xvfb

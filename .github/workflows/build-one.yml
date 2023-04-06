@@ -67,17 +67,17 @@ jobs:
           context: ${{ inputs.folder }}
           load: true
           labels: ${{ steps.meta.outputs.labels }}
-          tags: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          tags: zigarn/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
 
       - name: Test
         env:
-          IMAGE_NAME: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          IMAGE_NAME: zigarn/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
         run: |
           ${{ inputs.folder }}/test.sh
 
       - name: Export image artifact
         run: |
-          docker image save zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }} | gzip > ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}.tar.gz
+          docker image save zigarn/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }} | gzip > ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}.tar.gz
 
       - name: Upload image artifact
         uses: actions/upload-artifact@v3
@@ -89,7 +89,7 @@ jobs:
       - name: Compute versioned tag
         id: tag
         env:
-          IMAGE_NAME: zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
+          IMAGE_NAME: zigarn/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
           CHROMIUM_VERSION_REGEXP: 'Chromium ([0-9]+)\.'
           CHROMEDRIVER_VERSION_REGEXP: 'ChromeDriver ([0-9]+)\.'
         run: |
@@ -127,29 +127,29 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to US GAR
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
-        with:
-          registry: us-docker.pkg.dev
-          username: _json_key_base64
-          password: ${{ secrets.GAR_JSON_KEY }}
-
-      - name: Login to Europe GAR
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
-        with:
-          registry: europe-docker.pkg.dev
-          username: _json_key_base64
-          password: ${{ secrets.GAR_JSON_KEY }}
-
-      - name: Login to Asia GAR
-        if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
-        with:
-          registry: asia-docker.pkg.dev
-          username: _json_key_base64
-          password: ${{ secrets.GAR_JSON_KEY }}
+#      - name: Login to US GAR
+#        if: ${{ github.ref == 'refs/heads/master' }}
+#        uses: docker/login-action@v2
+#        with:
+#          registry: us-docker.pkg.dev
+#          username: _json_key_base64
+#          password: ${{ secrets.GAR_JSON_KEY }}
+#
+#      - name: Login to Europe GAR
+#        if: ${{ github.ref == 'refs/heads/master' }}
+#        uses: docker/login-action@v2
+#        with:
+#          registry: europe-docker.pkg.dev
+#          username: _json_key_base64
+#          password: ${{ secrets.GAR_JSON_KEY }}
+#
+#      - name: Login to Asia GAR
+#        if: ${{ github.ref == 'refs/heads/master' }}
+#        uses: docker/login-action@v2
+#        with:
+#          registry: asia-docker.pkg.dev
+#          username: _json_key_base64
+#          password: ${{ secrets.GAR_JSON_KEY }}
 
       - name: Set up Docker Buildx with docker-container driver
         if: ${{ github.ref == 'refs/heads/master' }}
@@ -168,16 +168,16 @@ jobs:
           platforms: linux/amd64,linux/arm64
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
-            zenika/${{ env.IMAGE_NAME }}
-            zenika/${{ env.IMAGE_VERSIONED_NAME }}
-            us-docker.pkg.dev/zenika-hub/gcr.io/${{ env.IMAGE_NAME }}
-            us-docker.pkg.dev/zenika-hub/gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
-            us-docker.pkg.dev/zenika-hub/us.gcr.io/${{ env.IMAGE_NAME }}
-            us-docker.pkg.dev/zenika-hub/us.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
-            europe-docker.pkg.dev/zenika-hub/eu.gcr.io/${{ env.IMAGE_NAME }}
-            europe-docker.pkg.dev/zenika-hub/eu.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
-            asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_NAME }}
-            asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+            zigarn/${{ env.IMAGE_NAME }}
+            zigarn/${{ env.IMAGE_VERSIONED_NAME }}
+#            us-docker.pkg.dev/zenika-hub/gcr.io/${{ env.IMAGE_NAME }}
+#            us-docker.pkg.dev/zenika-hub/gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+#            us-docker.pkg.dev/zenika-hub/us.gcr.io/${{ env.IMAGE_NAME }}
+#            us-docker.pkg.dev/zenika-hub/us.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+#            europe-docker.pkg.dev/zenika-hub/eu.gcr.io/${{ env.IMAGE_NAME }}
+#            europe-docker.pkg.dev/zenika-hub/eu.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
+#            asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_NAME }}
+#            asia-docker.pkg.dev/zenika-hub/asia.gcr.io/${{ env.IMAGE_VERSIONED_NAME }}
           push: true
           cache-from: type=gha
           cache-to: type=gha

@@ -1,4 +1,4 @@
-FROM zenika/alpine-chrome
+FROM zigarn/alpine-chrome
 
 USER root
 
