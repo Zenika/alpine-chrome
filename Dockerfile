@@ -7,7 +7,7 @@ RUN apk upgrade --no-cache --available \
       ttf-freefont \
       font-noto-emoji \
     && apk add --no-cache \
-      --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing \
+      --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
       font-wqy-zenhei
 
 COPY local.conf /etc/fonts/local.conf
