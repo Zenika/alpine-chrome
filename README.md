@@ -130,7 +130,7 @@ Command (with no-sandbox): `` docker container run -u `id -u $USER` -it --rm -v 
 
 # How to use with Deno
 
-Go the deno `src` folder. Build your image using this command:
+Go the demo `src` folder. Build your image using this command:
 
 ```
 docker image build -t zenika/alpine-chrome:with-deno-sample .
