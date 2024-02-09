@@ -274,21 +274,21 @@ Some examples are available on the `examples` [directory](examples):
 
 ```
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.15.4
+3.19.1
 ```
 
 ## Chrome version
 
 ```
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 100.0.4896.60
+Chromium 121.0.6167.85 Alpine Linux
 ```
 
 ## Image disk size
 
 ```
 docker image inspect zenika/alpine-chrome --format='{{.Size}}'
-357467827 # 341 MB
+663644797 # 633 MB
 ```
 
 # ✨ Contributors
