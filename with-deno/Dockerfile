@@ -51,7 +51,8 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
 # Inspired by https://github.com/hayd/deno-docker/blob/master/alpine.dockerfile
 # and https://github.com/denoland/deno_docker/blob/main/bin.dockerfile
 
-ENV DENO_VERSION 1.28.3
+ARG DENO_VERSION=1.28.3
+ENV DENO_VERSION=${DENO_VERSION}
 
 RUN apk add --no-cache tini curl && \
     curl -fsSL https://github.com/denoland/deno/releases/download/v${DENO_VERSION}/deno-x86_64-unknown-linux-gnu.zip --output deno.zip && \
