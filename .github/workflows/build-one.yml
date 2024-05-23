@@ -30,19 +30,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
+        uses: docker/setup-qemu-action@v3
 
       - name: Set up Docker Buildx with docker driver
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
         with:
           driver: docker
 
       - name: Docker meta
         id: meta
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           images: ${{ env.IMAGE_REPOSITORY }}
           tags: type=raw,value=${{ inputs.tag }}
@@ -52,7 +52,7 @@ jobs:
 
       - name: Download parent image artifact
         if: ${{ inputs.parent != '' }}
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.IMAGE_REPOSITORY }}-${{ inputs.parent }}
 
@@ -62,7 +62,7 @@ jobs:
           docker image load --input ${{ env.IMAGE_REPOSITORY }}-${{ inputs.parent }}.tar.gz
 
       - name: Build Docker image
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: ${{ inputs.folder }}
           load: true
@@ -80,7 +80,7 @@ jobs:
           docker image save zenika/${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }} | gzip > ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}.tar.gz
 
       - name: Upload image artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}
           path: ${{ env.IMAGE_REPOSITORY }}-${{ inputs.tag }}.tar.gz
@@ -122,14 +122,14 @@ jobs:
 
       - name: Login to DockerHub
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Login to US GAR
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: us-docker.pkg.dev
           username: _json_key_base64
@@ -137,7 +137,7 @@ jobs:
 
       - name: Login to Europe GAR
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: europe-docker.pkg.dev
           username: _json_key_base64
@@ -145,7 +145,7 @@ jobs:
 
       - name: Login to Asia GAR
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/login-action@v2
+        uses: docker/login-action@v3
         with:
           registry: asia-docker.pkg.dev
           username: _json_key_base64
@@ -153,7 +153,7 @@ jobs:
 
       - name: Set up Docker Buildx with docker-container driver
         if: ${{ github.ref == 'refs/heads/master' }}
-        uses: docker/setup-buildx-action@v2
+        uses: docker/setup-buildx-action@v3
         with:
           driver: docker-container
 
@@ -162,7 +162,7 @@ jobs:
         env:
           IMAGE_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ inputs.tag }}
           IMAGE_VERSIONED_NAME: ${{ env.IMAGE_REPOSITORY }}:${{ steps.tag.outputs.value }}
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: ${{ inputs.folder }}
           platforms: linux/amd64,linux/arm64
