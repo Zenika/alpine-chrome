@@ -1,11 +1,7 @@
 {
   "name": "zenika-alpinechrome-withplaywright",
   "version": "1.0.0",
-  "description": "Tests with playwright",
-  "scripts": {
-    "start": "node src/useragent",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "description": "Alpine chrome with playwright",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zenika/alpine-chrome.git"

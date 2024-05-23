@@ -7,8 +7,8 @@ DIR=$(cd $(dirname $0) && pwd)
 ${DIR}/../test.sh
 
 echo "# Playwright test"
-WORK_DIR=$(mktemp --directory)
-trap "rm -rf ${WORK_DIR}" EXIT
-mkdir ${WORK_DIR}/src/ && chmod a+rwX -R ${WORK_DIR}
-docker container run --rm --volume ${WORK_DIR}:/work --workdir /work ${IMAGE_NAME:-zenika/alpine-chrome:with-playwright}
-[ -f ${WORK_DIR}/src/example-chromium.png ]
+EXPECTED_SCREENSHOT="${DIR}/test/example.png"
+rm -f "${EXPECTED_SCREENSHOT}"
+chmod a+rwX -R ${DIR}/test
+docker container run --rm --volume ${DIR}/test:/usr/src/app/test ${IMAGE_NAME} node test/test.js
+[ -f "${EXPECTED_SCREENSHOT}" ] && echo "Screenshot created" || { echo "Missing screenshot" 2>&1; exit 1; }

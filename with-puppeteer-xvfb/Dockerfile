@@ -6,7 +6,6 @@ USER chrome
 
 ENV DISPLAY :99
 
-COPY --chown=chrome . ./
+COPY --chown=chrome docker-entrypoint.sh ./
 RUN chmod +x docker-entrypoint.sh
 ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh"]
-CMD ["node", "/usr/src/app/src/extension.js"]
