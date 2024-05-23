@@ -20,7 +20,7 @@ const { chromium } = require("playwright-chromium");
   });
   const context = await browser.newContext();
   const page = await context.newPage();
-  await page.goto("https://whatmyuseragent.com/");
+  await page.goto("https://icanhazip.com/");
   await page.screenshot({ path: `src/example-chromium.png` });
   await browser.close();
 })();
