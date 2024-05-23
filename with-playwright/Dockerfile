@@ -5,6 +5,4 @@ ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser
 WORKDIR /usr/src/app
 COPY --chown=chrome package.json package-lock.json ./
 RUN npm install
-COPY --chown=chrome . ./
 ENTRYPOINT ["tini", "--"]
-CMD ["node", "/usr/src/app/src/useragent"]

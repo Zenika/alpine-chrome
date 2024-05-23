@@ -5,7 +5,7 @@ const { chromium } = require("playwright-chromium");
   exec(
     process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH + " --version",
     function callback(error, stdout, stderr) {
-      console.log(stdout);
+      console.log(stdout.replace(/\n$/, ""));
     }
   );
 })();
@@ -20,7 +20,7 @@ const { chromium } = require("playwright-chromium");
   });
   const context = await browser.newContext();
   const page = await context.newPage();
-  await page.goto("https://icanhazip.com/");
-  await page.screenshot({ path: `src/example-chromium.png` });
+  await page.goto("https://example.com/");
+  await page.screenshot({ path: "test/example.png" });
   await browser.close();
 })();

@@ -132,13 +132,13 @@ Command (with no-sandbox): `` docker container run -u `id -u $USER` -it --rm -v 
 
 Go the deno `src` folder. Build your image using this command:
 
-```
+```shell
 docker image build -t zenika/alpine-chrome:with-deno-sample .
 ```
 
 Then launch the container:
 
-```
+```shell
 docker container run -it --rm zenika/alpine-chrome:with-deno-sample
  Download https://deno.land/std/examples/welcome.ts
  Warning Implicitly using master branch https://deno.land/std/examples/welcome.ts
@@ -148,7 +148,7 @@ docker container run -it --rm zenika/alpine-chrome:with-deno-sample
 
 With your own file, use this command:
 
-```
+```shell
 docker container run -it --rm -v $(pwd):/usr/src/app zenika/alpine-chrome:with-deno-sample run helloworld.ts
 Compile file:///usr/src/app/helloworld.ts
 Download https://deno.land/std/fmt/colors.ts
@@ -162,18 +162,18 @@ With tool like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v1.15.
 
 With some code in NodeJS, we can improve and make some tests.
 
-See the ["with-puppeteer"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer) folder for more details. We have to [follow the mapping of Chromium => Puppeteer described here](https://github.com/puppeteer/puppeteer/blob/main/versions.js).
+See the [`with-puppeteer`](./with-puppeteer) folder for more details. We have to [follow the mapping of Chromium => Puppeteer described here](https://github.com/puppeteer/puppeteer/blob/main/versions.js).
 
 If you have a NodeJS/Puppeteer script in your `src` folder named `pdf.js`, you can launch it using the following command:
 
-```
+```shell
 docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/pdf.js
 ```
 
-With the ["font-wqy-zenhei"](https://pkgs.alpinelinux.org/package/edge/testing/x86/font-wqy-zenhei) library, you could also manipulate asian pages like in ["screenshot-asia.js"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer/src/screenshot-asia.js)
+With the ["font-wqy-zenhei"](https://pkgs.alpinelinux.org/package/edge/community/x86/font-wqy-zenhei) library, you could also manipulate asian pages like in [`with-puppeteer/test/screenshot-asia.js`](./with-puppeteer/test/screenshot-asia.js)
 
-```
-docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node src/screenshot-asia.js
+```shell
+docker container run -it --rm -v $(pwd)/with-puppeteer/test:/usr/src/app/test --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer node test/screenshot-asia.js
 ```
 
 These websites are tested with the following supported languages:
@@ -183,29 +183,30 @@ These websites are tested with the following supported languages:
 - Korean (with `https://www.naver.com/`)
 
 # How to use with Puppeteer to test a Chrome Extension
-[According to puppeteer official doc](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#working-with-chrome-extensions) you can not test a Chrome Extension in headleass mode. You need a display available, that's where Xvfb comes in.
 
-See the ["with-puppeteer-xvfb"](https://github.com/Zenika/alpine-chrome/blob/master/with-puppeteer-xvfb) folder for more details. We have to [follow the mapping of Chromium => Puppeteer described here](https://github.com/puppeteer/puppeteer/blob/main/versions.js).
+[According to puppeteer official doc](https://github.com/puppeteer/puppeteer/blob/main/docs/api.md#working-with-chrome-extensions) you can not test a Chrome Extension in headless mode. You need a display available, that's where Xvfb comes in.
 
-Assuming you have a NodeJS/Puppeteer script in your `src` folder named `extension.js`, and the unpacked extension in the `chrome-extension` folder, you can launch it using the following command:
+See the [`with-puppeteer-xvfb`](./with-puppeteer-xvfb) folder for more details. We have to [follow the mapping of Chromium => Puppeteer described here](https://github.com/puppeteer/puppeteer/blob/main/versions.js).
 
-```
+Assuming you have a NodeJS/Puppeteer script in your `src` folder named `extension.js`, and the [unpacked extension](./with-puppeteer-xvfb/test/chrome-extension/) in the `src/chrome-extension` folder, you can launch it using the following command:
+
+```shell
 docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-puppeteer-xvfb node src/extension.js
 ```
 
-The extension provided will change the page background in red for every website visited. This demo will load the extension and take a screenshot of the icanhazip.com website.
+The extension provided will change the page background in red for every website visited. This test `test/test.js` will load the extension and take a screenshot of the https://example.com website.
 
 # How to use with Playwright
 
 Like ["Puppeteer"](https://pptr.dev/#?product=Puppeteer&version=v6.0.0&show=api-class-browser), we can do a lot things using ["Playwright"](https://playwright.dev/docs/core-concepts/#browser) with our Chrome Headless.
 
-Go to the `with-playwright` folder and launch the following command:
+Go to the [`with-playwright`](./with-playwright) folder and launch the following command:
 
-```
-docker container run -it --rm -v $(pwd)/src:/usr/src/app/src --cap-add=SYS_ADMIN zenika/alpine-chrome:with-playwright node src/useragent.js
+```shell
+docker container run -it --rm -v $(pwd)/test:/usr/src/app/test --cap-add=SYS_ADMIN zenika/alpine-chrome:with-playwright node test/test.js
 ```
 
-A `example-chromium.png` file will be created in your `with-playwright/src` folder.
+An `example.png` file will be created in the [`with-playwright/test`](./with-playwright/test) folder.
 
 # How to use with WebGL
 
@@ -230,7 +231,7 @@ Even if it used to run browsers in docker containers, it can be quite useful as 
 
 You can run it with following command:
 
-```
+```shell
 docker container run -it --rm --cap-add=SYS_ADMIN  -p 4444:4444 zenika/alpine-chrome:with-selenoid -capture-driver-logs
 ```
 
@@ -246,7 +247,7 @@ See more [selenoid docs](https://aerokube.com/selenoid/latest/#_using_selenoid_w
 
 We can run the container as root with this command:
 
-```
+```shell
 docker container run --rm -it --entrypoint "" --user root zenika/alpine-chrome sh
 ```
 
@@ -272,23 +273,23 @@ Some examples are available on the `examples` [directory](examples):
 
 ## Alpine version
 
-```
+```shell
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome cat /etc/alpine-release
-3.19.1
+# 3.19.1
 ```
 
 ## Chrome version
 
-```
+```shell
 docker container run -it --rm --entrypoint "" zenika/alpine-chrome chromium-browser --version
-Chromium 121.0.6167.85 Alpine Linux
+# Chromium 121.0.6167.85 Alpine Linux
 ```
 
 ## Image disk size
 
-```
+```shell
 docker image inspect zenika/alpine-chrome --format='{{.Size}}'
-663644797 # 633 MB
+# 663644797 # 633 MB
 ```
 
 # ✨ Contributors
