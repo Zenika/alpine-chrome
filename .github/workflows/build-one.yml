@@ -173,7 +173,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ${{ inputs.folder }}
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64,linux/arm/v7,linux/arm64
           labels: ${{ steps.meta.outputs.labels }}
           tags: |
             zenika/${{ env.IMAGE_NAME }}
