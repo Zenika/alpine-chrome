@@ -54,7 +54,7 @@ In the world of webdev, the ability to run quickly end-to-end tests are importan
 
 ## ❌ With nothing
 
-Launching the container using only `docker container run -it zenika/alpine-chrome ...` will fail with some logs similar to [#33](https://github.com/Zenika/alpine-chrome/issues/33).
+Launching the container using only `docker container run -it zenika/alpine-chrome ...` will fail with some logs similar to ~[#33](https://github.com/Zenika/alpine-chrome/issues/33)~.
 
 Please use the 3 others ways to use Chrome Headless.
 
