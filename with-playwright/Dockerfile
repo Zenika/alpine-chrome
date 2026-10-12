@@ -1,4 +1,5 @@
-FROM zenika/alpine-chrome:with-node
+ARG REGISTRY=zenika
+FROM ${REGISTRY}/alpine-chrome:with-node
 
 ENV PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD 1
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser

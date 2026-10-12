@@ -1,4 +1,5 @@
-FROM zenika/alpine-chrome:with-node
+ARG REGISTRY=zenika
+FROM ${REGISTRY}/alpine-chrome:with-node
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD 1
 ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium-browser

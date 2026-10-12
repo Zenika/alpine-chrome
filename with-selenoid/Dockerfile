@@ -1,5 +1,6 @@
+ARG REGISTRY=zenika
 FROM aerokube/selenoid:latest-release as selenoid
-FROM zenika/alpine-chrome:with-chromedriver
+FROM ${REGISTRY}/alpine-chrome:with-chromedriver
 
 USER root
 RUN apk add --no-cache ca-certificates tzdata mailcap

@@ -10,13 +10,16 @@ on:
     - cron: '25 4 * * 4'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-base:
     uses: ./.github/workflows/build-one.yml
     with:
       folder: .
       tag: latest
-    secrets: inherit
 
   build-with-node:
     needs:
@@ -26,7 +29,6 @@ jobs:
       folder: with-node
       tag: with-node
       parent: latest
-    secrets: inherit
 
   build-with-deno:
     needs:
@@ -36,7 +38,6 @@ jobs:
       folder: with-deno
       tag: with-deno
       parent: latest
-    secrets: inherit
 
   build-with-chromedriver:
     needs:
@@ -46,7 +47,6 @@ jobs:
       folder: with-chromedriver
       tag: with-chromedriver
       parent: latest
-    secrets: inherit
 
   build-with-playwright:
     needs:
@@ -56,7 +56,6 @@ jobs:
       folder: with-playwright
       tag: with-playwright
       parent: with-node
-    secrets: inherit
 
   build-with-puppeteer:
     needs:
@@ -66,7 +65,6 @@ jobs:
       folder: with-puppeteer
       tag: with-puppeteer
       parent: with-node
-    secrets: inherit
 
   build-with-puppeteer-xvfb:
     needs:
@@ -76,7 +74,6 @@ jobs:
       folder: with-puppeteer-xvfb
       tag: with-puppeteer-xvfb
       parent: with-puppeteer
-    secrets: inherit
 
   build-with-selenoid:
     needs:
@@ -86,4 +83,3 @@ jobs:
       folder: with-selenoid
       tag: with-selenoid
       parent: with-chromedriver
-    secrets: inherit

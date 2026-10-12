@@ -1,4 +1,5 @@
-FROM zenika/alpine-chrome:with-puppeteer
+ARG REGISTRY=zenika
+FROM ${REGISTRY}/alpine-chrome:with-puppeteer
 
 USER 0
 RUN apk add --no-cache xvfb
